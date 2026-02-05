@@ -1,0 +1,1132 @@
+/* ============================================================
+   governance_sub.css
+   Shared styles for all governance sub-pages:
+     1  Page shell + back link
+     2  Hero (circle icon + title + sub)
+     3  Score banner (rating page)
+     4  Progress bars (rating page)
+     5  Section title
+     6  PDF document cards
+     7  Group heading (policies page)
+     8  Financial year cards
+     9  Responsive
+    10  Dark mode
+   ============================================================ */
+
+/* ── 1  Page shell + back link ── */
+.gsub-page {
+    padding: 36px 0 80px;
+    background: #fff;
+    min-height: 80vh;
+}
+
+.gsub-back-row {
+    display: flex;
+    justify-content: flex-start;        /* start = right in RTL */
+    margin-bottom: 8px;
+}
+
+.gsub-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #5ba8c8;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: color .2s;
+}
+.gsub-back:hover { color: #3a8aad; }
+.gsub-back svg {
+    width: 18px; height: 18px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ── 2  Hero ── */
+.gsub-hero {
+    text-align: center;
+    margin: 28px 0 36px;
+}
+
+.gsub-hero__icon {
+    width: 76px; height: 76px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    display: flex; align-items: center; justify-content: center;
+}
+.gsub-hero__icon svg {
+    width: 36px; height: 36px;
+}
+
+.gsub-hero__title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.gsub-hero__sub {
+    font-size: 0.95rem;
+    color: #6b7280;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
+/* ── 3  Score banner ── */
+.gsub-banner {
+    background: linear-gradient(135deg, #5ba8c8, #7cc4dc);
+    border-radius: 18px;
+    padding: 40px 24px 36px;
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 40px;
+}
+
+.gsub-banner__label {
+    color: rgba(255,255,255,.82);
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.gsub-banner__score {
+    color: #fff;
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.gsub-banner__tag {
+    color: rgba(255,255,255,.75);
+    font-size: 0.92rem;
+}
+
+/* ── 4  Progress bars ── */
+.gsub-bars {
+    max-width: 860px;
+    margin: 0 auto 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gsub-bar-card {
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 14px;
+    padding: 22px 26px 20px;
+}
+
+/* head row: pct left, label right  (RTL flips automatically) */
+.gsub-bar-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.gsub-bar-card__pct {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.gsub-bar-card__label {
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* track + fill */
+.gsub-bar-card__track {
+    width: 100%;
+    height: 10px;
+    background: #eaeff4;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gsub-bar-card__fill {
+    height: 100%;
+    width: 0;                          /* JS sets this */
+    border-radius: 5px;
+    transition: width 1.4s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ── 5  Section title ── */
+.gsub-section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin: 40px 0 20px;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ── 6  PDF document card ── */
+.gsub-doc-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 14px;
+    padding: 18px 22px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .22s, box-shadow .22s;
+    max-width: 860px;
+    margin: 0 auto 14px;
+}
+.gsub-doc-card:hover {
+    border-color: #5ba8c8;
+    box-shadow: 0 4px 16px rgba(91,168,200,.12);
+}
+
+/* text block */
+.gsub-doc-card__text { flex: 1; text-align: right; }
+
+.gsub-doc-card__name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.gsub-doc-card__desc {
+    font-size: 0.87rem;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.gsub-doc-card__meta {
+    font-size: 0.82rem;
+    color: #9ca3af;
+}
+
+/* red doc icon square */
+.gsub-doc-card__icon {
+    width: 48px; height: 48px;
+    min-width: 48px;
+    background: #fef2f2;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: #ef4444;
+}
+.gsub-doc-card__icon svg {
+    width: 24px; height: 24px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ── 7  Group heading (policies) ── */
+.gsub-group-head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;         /* right side in RTL = logical start */
+    gap: 10px;
+    max-width: 860px;
+    margin: 36px auto 16px;
+}
+
+.gsub-group-head__label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.gsub-group-head__badge {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+}
+.gsub-group-head__badge svg {
+    width: 20px; height: 20px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* 2-col doc grid */
+.gsub-docs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+/* override single-card centering inside grid */
+.gsub-docs-grid .gsub-doc-card {
+    max-width: 100%;
+    margin: 0;
+}
+
+/* ── 8  Financial year cards ── */
+.gsub-fin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.gsub-fin-card {
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 16px;
+    padding: 36px 24px 28px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: border-color .22s, box-shadow .22s, transform .22s;
+}
+.gsub-fin-card:hover {
+    border-color: #22c55e;
+    box-shadow: 0 8px 24px rgba(34,197,94,.13);
+    transform: translateY(-3px);
+}
+
+/* green circle $ icon */
+.gsub-fin-card__icon {
+    width: 54px; height: 54px;
+    background: #dcfce7;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+.gsub-fin-card__icon svg {
+    width: 26px; height: 26px;
+    stroke: #22c55e; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.gsub-fin-card__year {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.gsub-fin-card__amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #22c55e;
+    margin: 0;
+}
+
+.gsub-fin-card__cta {
+    font-size: 0.87rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ── 9  Responsive ── */
+@media (max-width: 680px) {
+    .gsub-docs-grid,
+    .gsub-fin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gsub-banner__score {
+        font-size: 3rem;
+    }
+
+    .gsub-page {
+        padding: 24px 0 56px;
+    }
+}
+
+/* ── 10  Dark mode ── */
+.dark .gsub-page            { background: #111827; }
+.dark .gsub-hero__title     { color: #f3f4f6; }
+.dark .gsub-hero__sub       { color: #9ca3af; }
+
+.dark .gsub-bar-card        { background: #1f2937; border-color: #374151; }
+.dark .gsub-bar-card__label { color: #f3f4f6; }
+.dark .gsub-bar-card__track { background: #374151; }
+
+.dark .gsub-section-title   { color: #f3f4f6; }
+
+.dark .gsub-doc-card        { background: #1f2937; border-color: #374151; }
+.dark .gsub-doc-card:hover  { border-color: #5ba8c8; }
+.dark .gsub-doc-card__name  { color: #f3f4f6; }
+.dark .gsub-doc-card__desc  { color: #9ca3af; }
+.dark .gsub-doc-card__meta  { color: #6b7280; }
+.dark .gsub-doc-card__icon  { background: #3b1f1f; }
+
+.dark .gsub-group-head__label { color: #f3f4f6; }
+
+.dark .gsub-fin-card        { background: #1f2937; border-color: #374151; }
+.dark .gsub-fin-card:hover  { border-color: #22c55e; }
+.dark .gsub-fin-card__year  { color: #f3f4f6; }
+.dark .gsub-fin-card__icon  { background: #1a3a1a; }
+
+
+.gsub-group-head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;         /* right side in RTL = logical start */
+    gap: 10px;
+    max-width: 860px;
+    margin: 36px auto 16px;
+}
+
+/* ============================================================
+   governance_sub.css
+   Shared styles for all governance sub-pages:
+     1  Page shell + back link
+     2  Hero (circle icon + title + sub)
+     3  Score banner (rating page)
+     4  Progress bars (rating page)
+     5  Section title
+     6  PDF document cards
+     7  Group heading (policies page)
+     8  Financial year cards
+     9  Responsive
+    10  Dark mode
+   ============================================================ */
+
+/* ── 1  Page shell + back link ── */
+.gsub-page {
+    padding: 36px 0 80px;
+    background: #fff;
+    min-height: 80vh;
+}
+
+.gsub-back-row {
+    display: flex;
+    justify-content: flex-end;          /* flex-end = right in LTR, flips to left in RTL ✓ */
+    margin-bottom: 8px;
+}
+
+.gsub-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #5ba8c8;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: color .2s;
+}
+.gsub-back:hover { color: #3a8aad; }
+.gsub-back svg {
+    width: 18px; height: 18px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* flip the arrow in RTL so it points toward the right (back direction) */
+[dir="rtl"] .gsub-back__arrow,
+:root[dir="rtl"] .gsub-back__arrow {
+    transform: scaleX(-1);
+}
+
+/* ── 2  Hero ── */
+.gsub-hero {
+    text-align: center;
+    margin: 28px 0 36px;
+}
+
+.gsub-hero__icon {
+    width: 76px; height: 76px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    display: flex; align-items: center; justify-content: center;
+}
+.gsub-hero__icon svg {
+    width: 36px; height: 36px;
+}
+
+.gsub-hero__title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.gsub-hero__sub {
+    font-size: 0.95rem;
+    color: #6b7280;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
+/* ── 3  Score banner ── */
+.gsub-banner {
+    background: linear-gradient(135deg, #5ba8c8, #7cc4dc);
+    border-radius: 18px;
+    padding: 40px 24px 36px;
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 40px;
+}
+
+.gsub-banner__label {
+    color: rgba(255,255,255,.82);
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.gsub-banner__score {
+    color: #fff;
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.gsub-banner__tag {
+    color: rgba(255,255,255,.75);
+    font-size: 0.92rem;
+}
+
+/* ── 4  Progress bars ── */
+.gsub-bars {
+    max-width: 860px;
+    margin: 0 auto 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gsub-bar-card {
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 14px;
+    padding: 22px 26px 20px;
+}
+
+/* head row: pct and label on opposite ends — flex-end / flex-start swap automatically in RTL */
+.gsub-bar-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.gsub-bar-card__pct {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.gsub-bar-card__label {
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* track + fill */
+.gsub-bar-card__track {
+    width: 100%;
+    height: 10px;
+    background: #eaeff4;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gsub-bar-card__fill {
+    height: 100%;
+    width: 0;                          /* JS sets this */
+    border-radius: 5px;
+    transition: width 1.4s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ── 5  Section title ── */
+.gsub-section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin: 40px auto 20px;
+    max-width: 860px;
+}
+
+/* ── 6  PDF document card ── */
+.gsub-doc-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 14px;
+    padding: 18px 22px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .22s, box-shadow .22s;
+    max-width: 860px;
+    margin: 0 auto 14px;
+    /* icon on the right in RTL: use row-reverse so the icon (last child) appears first visually */
+    flex-direction: row-reverse;
+}
+.gsub-doc-card:hover {
+    border-color: #5ba8c8;
+    box-shadow: 0 4px 16px rgba(91,168,200,.12);
+}
+
+/* text block — align to the logical start (right in RTL) */
+.gsub-doc-card__text {
+    flex: 1;
+    text-align: start;              /* 'start' respects direction automatically ✓ */
+}
+
+.gsub-doc-card__name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.gsub-doc-card__desc {
+    font-size: 0.87rem;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.gsub-doc-card__meta {
+    font-size: 0.82rem;
+    color: #9ca3af;
+}
+
+/* red doc icon square */
+.gsub-doc-card__icon {
+    width: 48px; height: 48px;
+    min-width: 48px;
+    background: #fef2f2;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: #ef4444;
+}
+.gsub-doc-card__icon svg {
+    width: 24px; height: 24px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ── 7  Group heading ── */
+.gsub-group-head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;         /* flex-end = right in LTR; in RTL becomes left — but label+badge order in HTML is: label then badge, so visually: label is on the right, badge on its left ✓ */
+    gap: 10px;
+    max-width: 860px;
+    margin: 36px auto 16px;
+}
+
+.gsub-group-head__label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.gsub-group-head__badge {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+}
+.gsub-group-head__badge svg {
+    width: 20px; height: 20px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* 2-col doc grid */
+.gsub-docs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+/* override single-card centering inside grid */
+.gsub-docs-grid .gsub-doc-card {
+    max-width: 100%;
+    margin: 0;
+}
+
+/* ── 8  Financial year cards ── */
+.gsub-fin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.gsub-fin-card {
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 16px;
+    padding: 36px 24px 28px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: border-color .22s, box-shadow .22s, transform .22s;
+}
+.gsub-fin-card:hover {
+    border-color: #22c55e;
+    box-shadow: 0 8px 24px rgba(34,197,94,.13);
+    transform: translateY(-3px);
+}
+
+/* green circle $ icon */
+.gsub-fin-card__icon {
+    width: 54px; height: 54px;
+    background: #dcfce7;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+.gsub-fin-card__icon svg {
+    width: 26px; height: 26px;
+    stroke: #22c55e; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.gsub-fin-card__year {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.gsub-fin-card__amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #22c55e;
+    margin: 0;
+}
+
+.gsub-fin-card__cta {
+    font-size: 0.87rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ── 9  Responsive ── */
+@media (max-width: 680px) {
+    .gsub-docs-grid,
+    .gsub-fin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gsub-banner__score {
+        font-size: 3rem;
+    }
+
+    .gsub-page {
+        padding: 24px 0 56px;
+    }
+}
+
+/* ── 10  Dark mode ── */
+.dark .gsub-page            { background: #111827; }
+.dark .gsub-hero__title     { color: #f3f4f6; }
+.dark .gsub-hero__sub       { color: #9ca3af; }
+
+.dark .gsub-bar-card        { background: #1f2937; border-color: #374151; }
+.dark .gsub-bar-card__label { color: #f3f4f6; }
+.dark .gsub-bar-card__track { background: #374151; }
+
+.dark .gsub-section-title   { color: #f3f4f6; }
+
+.dark .gsub-doc-card        { background: #1f2937; border-color: #374151; }
+.dark .gsub-doc-card:hover  { border-color: #5ba8c8; }
+.dark .gsub-doc-card__name  { color: #f3f4f6; }
+.dark .gsub-doc-card__desc  { color: #9ca3af; }
+.dark .gsub-doc-card__meta  { color: #6b7280; }
+.dark .gsub-doc-card__icon  { background: #3b1f1f; }
+
+.dark .gsub-group-head__label { color: #f3f4f6; }
+
+.dark .gsub-fin-card        { background: #1f2937; border-color: #374151; }
+.dark .gsub-fin-card:hover  { border-color: #22c55e; }
+.dark .gsub-fin-card__year  { color: #f3f4f6; }
+.dark .gsub-fin-card__icon  { background: #1a3a1a; }
+
+
+/* ============================================================
+   governance_sub.css
+   Shared styles for all governance sub-pages:
+     1  Page shell + back link
+     2  Hero (circle icon + title + sub)
+     3  Score banner (rating page)
+     4  Progress bars (rating page)
+     5  Section title
+     6  PDF document cards
+     7  Group heading (policies page)
+     8  Financial year cards
+     9  Responsive
+    10  Dark mode
+   ============================================================ */
+
+/* ── 1  Page shell + back link ── */
+.gsub-page {
+    padding: 36px 0 80px;
+    background: #fff;
+    min-height: 80vh;
+}
+
+.gsub-back-row {
+    display: flex;
+    justify-content: flex-start;       /* flex-start = RIGHT in RTL ✓ */
+    margin-bottom: 8px;
+}
+
+.gsub-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #5ba8c8;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: color .2s;
+}
+.gsub-back:hover { color: #3a8aad; }
+.gsub-back svg {
+    width: 18px; height: 18px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* flip the arrow in RTL so it points toward the right (back direction) */
+[dir="rtl"] .gsub-back__arrow,
+:root[dir="rtl"] .gsub-back__arrow {
+    transform: scaleX(-1);
+}
+
+/* ── 2  Hero ── */
+.gsub-hero {
+    text-align: center;
+    margin: 28px 0 36px;
+}
+
+.gsub-hero__icon {
+    width: 76px; height: 76px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    display: flex; align-items: center; justify-content: center;
+}
+.gsub-hero__icon svg {
+    width: 36px; height: 36px;
+}
+
+.gsub-hero__title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.gsub-hero__sub {
+    font-size: 0.95rem;
+    color: #6b7280;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
+/* ── 3  Score banner ── */
+.gsub-banner {
+    background: linear-gradient(135deg, #5ba8c8, #7cc4dc);
+    border-radius: 18px;
+    padding: 40px 24px 36px;
+    text-align: center;
+    max-width: 860px;
+    margin: 0 auto 40px;
+}
+
+.gsub-banner__label {
+    color: rgba(255,255,255,.82);
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.gsub-banner__score {
+    color: #fff;
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 6px;
+}
+
+.gsub-banner__tag {
+    color: rgba(255,255,255,.75);
+    font-size: 0.92rem;
+}
+
+/* ── 4  Progress bars ── */
+.gsub-bars {
+    max-width: 860px;
+    margin: 0 auto 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gsub-bar-card {
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 14px;
+    padding: 22px 26px 20px;
+}
+
+/* head row: pct and label on opposite ends — flex-end / flex-start swap automatically in RTL */
+.gsub-bar-card__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.gsub-bar-card__pct {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.gsub-bar-card__label {
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* track + fill */
+.gsub-bar-card__track {
+    width: 100%;
+    height: 10px;
+    background: #eaeff4;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gsub-bar-card__fill {
+    height: 100%;
+    width: 0;                          /* JS sets this */
+    border-radius: 5px;
+    transition: width 1.4s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ── 5  Section title ── */
+.gsub-section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1e293b;
+    text-align: center;
+    margin: 40px auto 20px;
+    max-width: 860px;
+}
+
+/* ── 6  PDF document card ── */
+.gsub-doc-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 14px;
+    padding: 18px 22px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .22s, box-shadow .22s;
+    max-width: 860px;
+    margin: 0 auto 14px;
+    /* icon on the right in RTL: use row-reverse so the icon (last child) appears first visually */
+    flex-direction: row-reverse;
+}
+.gsub-doc-card:hover {
+    border-color: #5ba8c8;
+    box-shadow: 0 4px 16px rgba(91,168,200,.12);
+}
+
+/* text block — align to the logical start (right in RTL) */
+.gsub-doc-card__text {
+    flex: 1;
+    text-align: start;              /* 'start' respects direction automatically ✓ */
+}
+
+.gsub-doc-card__name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 2px;
+}
+
+.gsub-doc-card__desc {
+    font-size: 0.87rem;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.gsub-doc-card__meta {
+    font-size: 0.82rem;
+    color: #9ca3af;
+}
+
+/* red doc icon square */
+.gsub-doc-card__icon {
+    width: 48px; height: 48px;
+    min-width: 48px;
+    background: #fef2f2;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: #ef4444;
+}
+.gsub-doc-card__icon svg {
+    width: 24px; height: 24px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ── 7  Group heading ── */
+.gsub-group-head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;       /* flex-start = RIGHT in RTL ✓ */
+    gap: 10px;
+    max-width: 860px;
+    margin: 36px auto 16px;
+}
+
+.gsub-group-head__label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.gsub-group-head__badge {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+}
+.gsub-group-head__badge svg {
+    width: 20px; height: 20px;
+    stroke: currentColor; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* 2-col doc grid */
+.gsub-docs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+/* override single-card centering inside grid */
+.gsub-docs-grid .gsub-doc-card {
+    max-width: 100%;
+    margin: 0;
+}
+
+/* ── 8  Financial year cards ── */
+.gsub-fin-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.gsub-fin-card {
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 16px;
+    padding: 36px 24px 28px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: border-color .22s, box-shadow .22s, transform .22s;
+}
+.gsub-fin-card:hover {
+    border-color: #22c55e;
+    box-shadow: 0 8px 24px rgba(34,197,94,.13);
+    transform: translateY(-3px);
+}
+
+/* green circle $ icon */
+.gsub-fin-card__icon {
+    width: 54px; height: 54px;
+    background: #dcfce7;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+.gsub-fin-card__icon svg {
+    width: 26px; height: 26px;
+    stroke: #22c55e; fill: none;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.gsub-fin-card__year {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.gsub-fin-card__amount {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #22c55e;
+    margin: 0;
+}
+
+.gsub-fin-card__cta {
+    font-size: 0.87rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ── 9  Responsive ── */
+@media (max-width: 680px) {
+    .gsub-docs-grid,
+    .gsub-fin-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gsub-banner__score {
+        font-size: 3rem;
+    }
+
+    .gsub-page {
+        padding: 24px 0 56px;
+    }
+}
+
+/* ── 10  Dark mode ── */
+.dark .gsub-page            { background: #111827; }
+.dark .gsub-hero__title     { color: #f3f4f6; }
+.dark .gsub-hero__sub       { color: #9ca3af; }
+
+.dark .gsub-bar-card        { background: #1f2937; border-color: #374151; }
+.dark .gsub-bar-card__label { color: #f3f4f6; }
+.dark .gsub-bar-card__track { background: #374151; }
+
+.dark .gsub-section-title   { color: #f3f4f6; }
+
+.dark .gsub-doc-card        { background: #1f2937; border-color: #374151; }
+.dark .gsub-doc-card:hover  { border-color: #5ba8c8; }
+.dark .gsub-doc-card__name  { color: #f3f4f6; }
+.dark .gsub-doc-card__desc  { color: #9ca3af; }
+.dark .gsub-doc-card__meta  { color: #6b7280; }
+.dark .gsub-doc-card__icon  { background: #3b1f1f; }
+
+.dark .gsub-group-head__label { color: #f3f4f6; }
+
+.dark .gsub-fin-card        { background: #1f2937; border-color: #374151; }
+.dark .gsub-fin-card:hover  { border-color: #22c55e; }
+.dark .gsub-fin-card__year  { color: #f3f4f6; }
+.dark .gsub-fin-card__icon  { background: #1a3a1a; }

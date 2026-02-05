@@ -1,0 +1,602 @@
+/* ================================================
+   about.css  –  من نحن  (About page)
+   All colours / radii / spacing pulled from the
+   uploaded screenshots to stay pixel-accurate.
+   ================================================ */
+
+/* ── shared tokens ── */
+:root {
+    --clr-primary:      #5ba8c8;   /* sky-blue used on icons & links */
+    --clr-primary-bg:   #eef7fb;   /* very light blue — icon box bg   */
+    --clr-primary-dark: #3a8aad;   /* hover shade                    */
+    --clr-navy:         #1a2744;   /* stats banner dark bg           */
+    --clr-navy-card:    #252f4a;   /* stats card bg (slightly lighter)*/
+    --clr-text:         #333;
+    --clr-text-light:   #6b7280;
+    --clr-card-bg:      #f4f8fa;   /* very pale grey card            */
+    --clr-white:        #fff;
+    --radius-card:      16px;
+    --radius-icon:      12px;
+    --shadow-card:      0 2px 12px rgba(0,0,0,.06);
+}
+
+/* ================================================
+   HERO
+   ================================================ */
+.about-hero {
+    position: relative;
+    height: 480px;                  /* match screenshot proportion     */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-hero__bg {
+    position: absolute;
+    inset: 0;
+}
+.about-hero__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.about-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(20, 30, 50, .55) 0%,
+        rgba(20, 30, 50, .70) 100%
+    );
+}
+.about-hero__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--clr-white);
+}
+.about-hero__label {
+    font-size: 1.25rem;
+    font-weight: 400;
+    opacity: .85;
+    margin-bottom: 12px;
+    letter-spacing: .04em;
+}
+.about-hero__title {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+/* ================================================
+   INTRO
+   ================================================ */
+.about-intro {
+    padding: 72px 0 40px;
+    text-align: center;
+}
+.about-intro__heading {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 20px;
+}
+.about-intro__text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--clr-text-light);
+    max-width: 780px;
+    margin: 0 auto 16px;
+}
+.about-intro__link {
+    color: var(--clr-primary);
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color .25s;
+}
+.about-intro__link:hover {
+    border-color: var(--clr-primary);
+}
+
+/* ================================================
+   THREE IMAGES ROW
+   ================================================ */
+.about-images {
+    padding: 24px 0 56px;
+}
+.about-images__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.about-images__item {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    box-shadow: var(--shadow-card);
+}
+.about-images__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+.about-images__item:hover img {
+    transform: scale(1.04);
+}
+
+/* ================================================
+   VISION & MISSION CARDS
+   ================================================ */
+.about-vm {
+    padding: 16px 0 64px;
+}
+.about-vm__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.about-vm__card {
+    background: var(--clr-card-bg);
+    border-radius: var(--radius-card);
+    padding: 40px 36px;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    transition: box-shadow .3s;
+}
+.about-vm__card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,.1);
+}
+.about-vm__icon-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.about-vm__icon {
+    width: 56px;
+    height: 56px;
+    background: var(--clr-primary-bg);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-vm__icon svg {
+    width: 26px;
+    height: 26px;
+    color: var(--clr-primary);
+    stroke: var(--clr-primary);
+}
+.about-vm__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 10px;
+}
+.about-vm__desc {
+    font-size: .95rem;
+    line-height: 1.7;
+    color: var(--clr-text-light);
+}
+
+/* ================================================
+   VALUES  (القيم)
+   ================================================ */
+.about-values {
+    padding: 56px 0;
+    background: var(--clr-white);
+}
+.about-values__heading {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 36px;
+}
+.about-values__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.about-values__card {
+    background: var(--clr-card-bg);
+    border-radius: var(--radius-card);
+    padding: 40px 20px 36px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: transform .3s, box-shadow .3s;
+}
+.about-values__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,.1);
+}
+.about-values__icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    background: var(--clr-primary-bg);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-values__icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--clr-primary);
+    color: var(--clr-primary);
+}
+.about-values__label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--clr-text);
+}
+
+/* ================================================
+   ASSOCIATION GOALS  (أهداف الجمعية)
+   ================================================ */
+.about-goals {
+    padding: 56px 0;
+}
+.about-goals__sub {
+    text-align: center;
+    color: var(--clr-primary);
+    font-size: .95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.about-goals__heading {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 36px;
+}
+.about-goals__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.about-goals__card {
+    background: var(--clr-card-bg);
+    border-radius: var(--radius-card);
+    padding: 40px 36px;
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    transition: box-shadow .3s;
+}
+.about-goals__card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,.1);
+}
+.about-goals__text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--clr-text-light);
+    margin: 0;
+}
+
+/* ================================================
+   OPERATIONAL GOALS  (الأهداف التشغيلية)
+   ================================================ */
+.about-opgoals {
+    padding: 56px 0 72px;
+    background: var(--clr-white);
+}
+.about-opgoals__heading {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 36px;
+}
+.about-opgoals__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.about-opgoals__card {
+    background: var(--clr-card-bg);
+    border-radius: var(--radius-card);
+    padding: 36px 20px 32px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    transition: transform .3s, box-shadow .3s;
+}
+.about-opgoals__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,.1);
+}
+/* 5th card centred under the row of 4 */
+.about-opgoals__card--center {
+    grid-column: 2 / 4;           /* spans middle two columns       */
+    max-width: 360px;
+    margin: 0 auto;
+}
+.about-opgoals__icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 18px;
+    background: var(--clr-primary-bg);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-opgoals__icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--clr-primary);
+    color: var(--clr-primary);
+}
+.about-opgoals__label {
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--clr-text);
+    line-height: 1.5;
+}
+
+/* ================================================
+   STATS BANNER  (الجمعية في أرقام)
+   ================================================ */
+.about-stats {
+    background: var(--clr-navy);
+    padding: 72px 0 80px;
+    color: var(--clr-white);
+    text-align: center;
+}
+.about-stats .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Years highlight */
+.about-stats__years {
+    margin-bottom: 44px;
+}
+.about-stats__years-num {
+    display: block;
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--clr-white);
+}
+.about-stats__years-label {
+    font-size: 1.05rem;
+    opacity: .75;
+    margin-top: 6px;
+}
+
+/* Sub heading */
+.about-stats__heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    opacity: .9;
+    margin-bottom: 32px;
+}
+
+/* 4 stat cards */
+.about-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+.about-stats__card {
+    background: var(--clr-navy-card);
+    border-radius: var(--radius-card);
+    padding: 36px 16px 32px;
+}
+.about-stats__number {
+    display: block;
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+.about-stats__label {
+    font-size: .88rem;
+    line-height: 1.55;
+    opacity: .7;
+}
+
+/* ================================================
+   RESPONSIVE  –  tablet
+   ================================================ */
+@media (max-width: 900px) {
+    .about-hero        { height: 380px; }
+    .about-vm__grid    { grid-template-columns: 1fr; }
+    .about-values__grid,
+    .about-opgoals__grid,
+    .about-stats__grid { grid-template-columns: repeat(2, 1fr); }
+    .about-opgoals__card--center { grid-column: 1 / -1; }
+}
+
+/* ================================================
+   RESPONSIVE  –  mobile
+   ================================================ */
+@media (max-width: 580px) {
+    .about-hero        { height: 300px; }
+    .about-hero__title { font-size: 1.4rem; }
+    .about-images__grid { grid-template-columns: 1fr; }
+    .about-values__grid,
+    .about-opgoals__grid,
+    .about-stats__grid { grid-template-columns: 1fr; }
+    .about-goals__grid { grid-template-columns: 1fr; }
+    .about-opgoals__card--center { grid-column: 1; }
+}
+
+/* ================================================
+   DARK MODE  (honour base.html dark: toggle)
+   ================================================ */
+.dark .about-intro,
+.dark .about-vm,
+.dark .about-goals,
+.dark .about-images {
+    background: #111827;
+    color: #e5e7eb;
+}
+.dark .about-values,
+.dark .about-opgoals {
+    background: #1f2937;
+    color: #e5e7eb;
+}
+.dark .about-intro__heading,
+.dark .about-values__heading,
+.dark .about-goals__heading,
+.dark .about-opgoals__heading,
+.dark .about-vm__title,
+.dark .about-values__label,
+.dark .about-opgoals__label,
+.dark .about-goals__text {
+    color: #f3f4f6;
+}
+.dark .about-intro__text,
+.dark .about-vm__desc,
+.dark .about-goals__text {
+    color: #9ca3af;
+}
+.dark .about-vm__card,
+.dark .about-values__card,
+.dark .about-goals__card,
+.dark .about-opgoals__card {
+    background: #374151;
+    box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+
+/* ================================================
+   PROFILE DOWNLOAD CARDS
+   ================================================ */
+.about-profile {
+    padding: 72px 0 80px;
+    background: var(--clr-white);
+}
+.about-profile__heading {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin-bottom: 36px;
+}
+.about-profile__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* single card — clickable <a> */
+.about-profile__card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--clr-card-bg);
+    border: 2px solid transparent;
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-card);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .25s, box-shadow .25s, transform .25s;
+    cursor: pointer;
+}
+.about-profile__card:hover {
+    border-color: var(--clr-primary);
+    box-shadow: 0 6px 24px rgba(91, 168, 200, .18);
+    transform: translateY(-3px);
+}
+
+/* PDF icon circle */
+.about-profile__icon {
+    flex-shrink: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-profile__card--ar .about-profile__icon {
+    background: #eef7fb;
+}
+.about-profile__card--en .about-profile__icon {
+    background: #eef5f0;           /* soft green tint for EN          */
+}
+.about-profile__card--ar .about-profile__icon svg {
+    width: 26px; height: 26px;
+    stroke: var(--clr-primary);
+}
+.about-profile__card--en .about-profile__icon svg {
+    width: 26px; height: 26px;
+    stroke: #4caf7a;              /* green accent for EN             */
+}
+
+/* text block */
+.about-profile__body {
+    flex: 1;
+    min-width: 0;
+}
+.about-profile__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--clr-text);
+    margin: 0 0 4px;
+    line-height: 1.35;
+}
+.about-profile__sub {
+    font-size: .85rem;
+    color: var(--clr-text-light);
+    margin: 0;
+}
+
+/* arrow icon — flipped for LTR english card */
+.about-profile__arrow {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+}
+.about-profile__arrow svg {
+    width: 100%; height: 100%;
+    stroke: var(--clr-text-light);
+    transition: stroke .25s;
+}
+.about-profile__card:hover .about-profile__arrow svg {
+    stroke: var(--clr-primary);
+}
+.about-profile__card--en .about-profile__arrow svg {
+    stroke: #4caf7a;
+}
+.about-profile__card--en:hover .about-profile__arrow svg {
+    stroke: #3a9e68;
+}
+
+/* ── responsive ── */
+@media (max-width: 700px) {
+    .about-profile__grid { grid-template-columns: 1fr; }
+}
+
+/* ── dark mode ── */
+.dark .about-profile {
+    background: #1f2937;
+}
+.dark .about-profile__heading {
+    color: #f3f4f6;
+}
+.dark .about-profile__card {
+    background: #374151;
+    box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+.dark .about-profile__card:hover {
+    border-color: var(--clr-primary);
+    box-shadow: 0 6px 24px rgba(91,168,200,.25);
+}
+.dark .about-profile__title {
+    color: #f3f4f6;
+}
+.dark .about-profile__sub {
+    color: #9ca3af;
+}

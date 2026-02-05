@@ -1,0 +1,455 @@
+/* ================================================
+   contact.css  –  Redesigned Contact Page
+   ================================================ */
+
+/* ── Page Section ── */
+.contact-section {
+    padding: 5rem 0 6rem;
+    background: #ffffff;
+    min-height: 100vh;
+}
+
+/* ── Centered Header ── */
+.contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.contact-subtitle {
+    color: var(--gray-600);
+    font-size: 1rem;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ── Two-column grid ── */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.55fr 1fr;   /* ~60 / 40 */
+    gap: 1.75rem;
+    align-items: start;
+}
+
+/* ── Shared card shell ── */
+.contact-card {
+    background: #ffffff;
+    border: 1px solid var(--gray-200);
+    border-radius: 14px;
+    padding: 2rem;
+}
+
+.contact-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: right;
+}
+
+/* ── Right sidebar wrapper ── */
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* ================================================
+   FORM CARD
+   ================================================ */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Single field block */
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+/* Label */
+.contact-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: right;
+}
+
+.contact-required {
+    color: #ef4444;          /* red-500 */
+    margin-left: 0.2rem;     /* RTL: pushes asterisk to visual left of label */
+}
+
+/* Input wrapper – positions the icon absolutely */
+.contact-input-wrap {
+    position: relative;
+}
+
+/* Base input */
+.contact-input {
+    width: 100%;
+    padding: 0.8rem 2.6rem 0.8rem 1rem;   /* extra right padding for icon */
+    border: 1px solid var(--gray-300);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background: #fff;
+    text-align: right;
+    direction: rtl;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    font-family: inherit;
+}
+
+.contact-input::placeholder {
+    color: var(--gray-400);
+}
+
+.contact-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(118, 182, 233, 0.15);
+}
+
+/* Icon inside input – sits on the right (visual right = start in RTL) */
+.contact-input-icon {
+    position: absolute;
+    top: 50%;
+    right: 0.85rem;          /* RTL: "right" = visual right */
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--gray-400);
+    pointer-events: none;
+    stroke-width: 1.5;
+}
+
+/* Textarea */
+.contact-textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background: #fff;
+    text-align: right;
+    direction: rtl;
+    resize: vertical;
+    min-height: 130px;
+    font-family: inherit;
+    line-height: 1.6;
+    transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.contact-textarea::placeholder {
+    color: var(--gray-400);
+}
+
+.contact-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(118, 182, 233, 0.15);
+}
+
+/* Submit button */
+.contact-submit {
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.15s, box-shadow 0.25s;
+    margin-top: 0.25rem;
+    font-family: inherit;
+}
+
+.contact-submit:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(118, 182, 233, 0.3);
+}
+
+.contact-submit:active {
+    transform: translateY(0);
+}
+
+/* ── Success Toast ── */
+.contact-toast {
+    position: absolute;
+    bottom: -80px;                        /* hidden below card */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transition: bottom 0.4s cubic-bezier(.4,0,.2,1), opacity 0.35s ease;
+    z-index: 10;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+.contact-toast--visible {
+    bottom: 1.5rem;
+    opacity: 1;
+}
+
+.contact-toast-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #4ade80;         /* green-400 */
+    stroke-width: 2.5;
+    flex-shrink: 0;
+}
+
+/* make the form card the positioning anchor */
+.contact-card--form {
+    position: relative;
+    overflow: visible;       /* toast slides out below */
+}
+
+/* ================================================
+   CONTACT INFO CARD
+   ================================================ */
+
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+/* Each row: circle on visual-RIGHT, text on visual-LEFT.
+   RTL flex start = right, so HTML order  circle → text
+   renders as  [circle … right]  [text … left].
+   width:100% + space-between gives the full spread. */
+.contact-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+
+.contact-info-row:hover {
+    opacity: 0.82;
+}
+
+/* Text block – sits on the visual left */
+.contact-info-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;          /* left-align label & value */
+    gap: 0.2rem;
+    flex: 1;
+    padding-right: 1rem;              /* breathing room next to circle */
+}
+
+.contact-info-label {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+.contact-info-value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* Blue circle – sits on the visual right, fixed size */
+.contact-info-circle {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(118, 182, 233, 0.25);
+}
+
+.contact-info-circle svg {
+    width: 22px;
+    height: 22px;
+    color: #fff;
+    stroke: #fff;
+    stroke-width: 1.8;
+}
+
+/* ================================================
+   CEO CARD (dark navy)
+   ================================================ */
+
+.contact-card--ceo {
+    background: var(--dark-bg);          /* #0c122e */
+    border-color: transparent;
+    text-align: center;
+}
+
+.contact-ceo-role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+}
+
+.contact-ceo-name {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+}
+
+.contact-ceo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+/* Each CEO row: value + small icon */
+.contact-ceo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.contact-ceo-row:hover {
+    opacity: 0.82;
+}
+
+.contact-ceo-value {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.contact-ceo-icon {
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    stroke: #fff;
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+/* ================================================
+   Dark Mode
+   ================================================ */
+
+.dark .contact-section {
+    background: var(--dark-bg);
+}
+
+.dark .contact-card {
+    background: var(--dark-secondary);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.dark .contact-card--ceo {
+    background: #0a0f1e;              /* slightly deeper than dark-secondary */
+}
+
+.dark .contact-title,
+.dark .contact-card-title,
+.dark .contact-info-value {
+    color: #ffffff;
+}
+
+.dark .contact-subtitle,
+.dark .contact-info-label {
+    color: rgba(255,255,255,0.55);
+}
+
+.dark .contact-label {
+    color: rgba(255,255,255,0.85);
+}
+
+.dark .contact-input,
+.dark .contact-textarea {
+    background: var(--dark-bg);
+    border-color: rgba(255,255,255,0.15);
+    color: #ffffff;
+}
+
+.dark .contact-input::placeholder,
+.dark .contact-textarea::placeholder {
+    color: rgba(255,255,255,0.35);
+}
+
+.dark .contact-input:focus,
+.dark .contact-textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(118,182,233,0.2);
+}
+
+/* ================================================
+   Responsive
+   ================================================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;      /* stack vertically */
+    }
+
+    .contact-sidebar {
+        flex-direction: row;             /* info + ceo side by side */
+    }
+
+    .contact-sidebar > .contact-card {
+        flex: 1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 3rem 0 4rem;
+    }
+
+    .contact-title {
+        font-size: 2rem;
+    }
+
+    .contact-sidebar {
+        flex-direction: column;          /* stack again on small screens */
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+    }
+
+    .contact-toast {
+        left: 1rem;
+        right: 1rem;
+        transform: none;
+        justify-content: center;
+    }
+}

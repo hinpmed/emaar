@@ -1,0 +1,425 @@
+/* ============================================================
+   services.css
+   ──────────────────────────────────────────────────────────
+   1  Page wrapper & heading
+   2  Filter bar  (pills + funnel + search)
+   3  Service-card grid
+   4  Single card internals
+   5  Empty state
+   6  Coming-soon page  (.svc-soon)
+   7  Responsive  (tablet → mobile)
+   8  Dark mode
+   ============================================================ */
+
+/* ── 1  Page wrapper & heading ── */
+.svc-page {
+    padding: 60px 0 80px;
+    background: #ffffff;
+    min-height: 60vh;
+}
+
+.svc-page__header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.svc-page__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 10px;
+}
+
+.svc-page__sub {
+    font-size: 1rem;
+    color: #6b7280;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ── 2  Filter bar ── */
+.svc-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #f4f7fa;
+    border-radius: 14px;
+    padding: 14px 22px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+}
+
+/* --- pills row --- */
+.svc-bar__pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.svc-pill {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 1.5px solid #dde4eb;
+    background: #ffffff;
+    color: #4b5563;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, color .2s;
+    white-space: nowrap;
+}
+
+.svc-pill:hover {
+    border-color: #5ba8c8;
+    color: #5ba8c8;
+}
+
+.svc-pill--active {
+    background: #5ba8c8;
+    border-color: #5ba8c8;
+    color: #ffffff;
+}
+
+/* --- funnel icon (between pills and search, matches screenshot) --- */
+.svc-bar__funnel {
+    width: 22px;
+    height: 22px;
+    color: #9ca3af;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svc-bar__funnel svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+}
+
+/* --- search box --- */
+.svc-bar__search {
+    flex: 1;
+    min-width: 220px;
+    position: relative;
+}
+
+.svc-bar__input {
+    width: 100%;
+    padding: 10px 42px 10px 18px;   /* right padding for the magnifying-glass icon */
+    border: 1.5px solid #dde4eb;
+    border-radius: 10px;
+    background: #ffffff;
+    font-size: 0.92rem;
+    color: #1e293b;
+    text-align: right;              /* RTL */
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.svc-bar__input:focus {
+    outline: none;
+    border-color: #5ba8c8;
+    box-shadow: 0 0 0 3px rgba(91, 168, 200, .12);
+}
+
+.svc-bar__input::placeholder {
+    color: #9ca3af;
+}
+
+.svc-bar__search-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.svc-bar__search-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+}
+
+/* ── 3  Service-card grid ── */
+.svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* ── 4  Single card ── */
+.svc-card {
+    background: #ffffff;
+    border: 1.5px solid #e8edf2;
+    border-radius: 16px;
+    padding: 30px 24px 24px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    position: relative;
+    min-height: 210px;
+    justify-content: center;
+    transition: border-color .25s, box-shadow .25s, transform .25s;
+}
+
+.svc-card:hover {
+    border-color: #5ba8c8;
+    box-shadow: 0 8px 28px rgba(91, 168, 200, .15);
+    transform: translateY(-3px);
+}
+
+/* --- badge (top-right corner in RTL = visual top-left) --- */
+.svc-card__badge {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 14px;
+    white-space: nowrap;
+}
+
+/* per-category colours ─ match screenshot palette */
+.svc-badge--عام      { background: #eef7fb; color: #5ba8c8; }
+.svc-badge--حوكمة    { background: #eef5f0; color: #4caf7a; }
+.svc-badge--تطوع     { background: #fef3e2; color: #e8943a; }
+.svc-badge--توظيف    { background: #eff0fe; color: #6c63ff; }
+.svc-badge--تبرع     { background: #fef2f2; color: #ef4444; }
+.svc-badge--مستفيد   { background: #f0f4ff; color: #3b82f6; }
+
+/* --- emoji icon --- */
+.svc-card__icon {
+    font-size: 2.6rem;
+    line-height: 1;
+    margin-top: 4px;
+}
+
+/* --- title --- */
+.svc-card__title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- description --- */
+.svc-card__desc {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.55;
+}
+
+/* ── 5  Empty state ── */
+.svc-empty {
+    display: none;
+    text-align: center;
+    padding: 72px 0;
+}
+
+.svc-empty--visible {
+    display: block;
+}
+
+.svc-empty__icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.svc-empty__text {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+/* ── 6  Coming-soon page  (.svc-soon) ── */
+.svc-soon {
+    min-height: calc(100vh - 80px);   /* full viewport minus header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    padding: 60px 0;
+}
+
+.svc-soon__box {
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+}
+
+/* --- animated SVG ring --- */
+.svc-soon__ring {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 26px;
+    position: relative;
+}
+
+.svc-soon__svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);   /* rotate so fill starts at 12 o'clock */
+}
+
+.svc-soon__track {
+    fill: none;
+    stroke: #e2e8f0;
+    stroke-width: 6;
+}
+
+.svc-soon__progress {
+    fill: none;
+    stroke: #5ba8c8;
+    stroke-width: 6;
+    stroke-linecap: round;
+    /* circumference = 2π × 40 ≈ 251.33 */
+    stroke-dasharray: 251.33;
+    stroke-dashoffset: 251.33;
+    animation: svcRingFill 2.6s cubic-bezier(.4, 0, .2, 1) infinite alternate;
+}
+
+@keyframes svcRingFill {
+    to { stroke-dashoffset: 0; }
+}
+
+/* hourglass emoji centred inside the ring */
+.svc-soon__emoji {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+}
+
+/* --- "قريباً" pill badge --- */
+.svc-soon__badge {
+    display: inline-block;
+    background: #eef7fb;
+    color: #5ba8c8;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    letter-spacing: .02em;
+}
+
+/* --- heading --- */
+.svc-soon__title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+/* --- blue sub-line --- */
+.svc-soon__sub {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #5ba8c8;
+    margin-bottom: 14px;
+}
+
+/* --- body text --- */
+.svc-soon__desc {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.75;
+    margin-bottom: 34px;
+}
+
+/* --- back link (RTL-aware arrow) --- */
+.svc-soon__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #5ba8c8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color .22s, transform .22s;
+}
+
+.svc-soon__back:hover {
+    color: #3a8aad;
+    transform: translateX(4px);   /* RTL nudge */
+}
+
+.svc-soon__back svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+}
+
+/* ── 7  Responsive ── */
+@media (max-width: 900px) {
+    .svc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .svc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .svc-bar {
+        padding: 12px 14px;
+    }
+
+    .svc-pill {
+        padding: 7px 14px;
+        font-size: 0.82rem;
+    }
+
+    .svc-page {
+        padding: 40px 0 56px;
+    }
+
+    .svc-soon__title {
+        font-size: 1.45rem;
+    }
+
+    .svc-soon__ring {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+/* ── 8  Dark mode ── */
+.dark .svc-page              { background: #111827; }
+.dark .svc-page__title       { color: #f3f4f6; }
+.dark .svc-page__sub         { color: #9ca3af; }
+
+.dark .svc-bar               { background: #1f2937; }
+.dark .svc-pill              { background: #374151; border-color: #4b5563; color: #d1d5db; }
+.dark .svc-pill:hover        { border-color: #5ba8c8; color: #5ba8c8; }
+.dark .svc-pill--active      { background: #5ba8c8; border-color: #5ba8c8; color: #fff; }
+
+.dark .svc-bar__input        { background: #374151; border-color: #4b5563; color: #f3f4f6; }
+.dark .svc-bar__input::placeholder { color: #6b7280; }
+
+.dark .svc-card              { background: #1f2937; border-color: #374151; }
+.dark .svc-card:hover        { border-color: #5ba8c8; }
+.dark .svc-card__title       { color: #f3f4f6; }
+.dark .svc-card__desc        { color: #9ca3af; }
+
+.dark .svc-empty__text       { color: #9ca3af; }
+
+.dark .svc-soon              { background: #111827; }
+.dark .svc-soon__title       { color: #f3f4f6; }
+.dark .svc-soon__desc        { color: #9ca3af; }
+.dark .svc-soon__track       { stroke: #374151; }

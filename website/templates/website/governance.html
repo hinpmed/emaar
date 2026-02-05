@@ -1,0 +1,47 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}الحوكمة - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/governance.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="gov-page">
+    <div class="container">
+
+        <!-- ─── Heading ─── -->
+        <div class="gov-page__header">
+            <h1 class="gov-page__title">الحوكمة</h1>
+            <p class="gov-page__sub">نلتزم بأعلى معايير الحوكمة والشفافية في جميع عملياتنا وأنشطتنا</p>
+        </div>
+
+        <!-- ─── Cards grid ─── -->
+        <div class="gov-grid">
+            {% for item in sections %}
+            <a href="{% url item.url_name %}" class="gov-card">
+
+                <!-- Coloured rounded-square icon -->
+                <div class="gov-card__icon-wrap" style="background:{{ item.icon_bg }};">
+                    <svg class="gov-card__svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        {{ item.icon_path|safe }}
+                    </svg>
+                </div>
+
+                <!-- Title -->
+                <h3 class="gov-card__title">{{ item.title }}</h3>
+
+                <!-- Description -->
+                <p class="gov-card__desc">{{ item.description }}</p>
+
+                <!-- "عرض التفاصيل" – visible on hover via CSS -->
+                <span class="gov-card__cta">عرض التفاصيل</span>
+
+            </a>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+{% endblock %}

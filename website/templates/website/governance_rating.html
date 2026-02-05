@@ -1,0 +1,115 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}درجة تقييم الحوكمة - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/governance_sub.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="gsub-page">
+  <div class="container">
+
+    <!-- ── back link ── -->
+    <div class="gsub-back-row">
+      <a href="{% url 'website:governance' %}" class="gsub-back">
+        العودة للحوكمة
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- ── hero icon + title ── -->
+    <div class="gsub-hero">
+      <div class="gsub-hero__icon" style="background:#5ba8c8;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="6"/>
+          <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+        </svg>
+      </div>
+      <h1 class="gsub-hero__title">درجة تقييم الحوكمة</h1>
+      <p  class="gsub-hero__sub">اطلع على نتائج تقييم الحوكمة ومعايير الامتثال</p>
+    </div>
+
+    <!-- ── big blue score banner ── -->
+    <div class="gsub-banner">
+      <p class="gsub-banner__label">النتيجة الإجمالية</p>
+      <p class="gsub-banner__score">95.52%</p>
+      <p class="gsub-banner__tag">تقييم ممتاز</p>
+    </div>
+
+    <!-- ── progress bar rows ── -->
+    <div class="gsub-bars">
+
+      <!-- النتيجة العامة ─ green -->
+      <div class="gsub-bar-card">
+        <div class="gsub-bar-card__head">
+          <span class="gsub-bar-card__pct" style="color:#22c55e;">95.52%</span>
+          <span class="gsub-bar-card__label">النتيجة العامة</span>
+        </div>
+        <div class="gsub-bar-card__track">
+          <div class="gsub-bar-card__fill" data-width="95.52" style="background:#22c55e;"></div>
+        </div>
+      </div>
+
+      <!-- معيار الامتثال والالتزام ─ blue→cyan -->
+      <div class="gsub-bar-card">
+        <div class="gsub-bar-card__head">
+          <span class="gsub-bar-card__pct" style="color:#3b82f6;">96.75%</span>
+          <span class="gsub-bar-card__label">معيار الامتثال والالتزام</span>
+        </div>
+        <div class="gsub-bar-card__track">
+          <div class="gsub-bar-card__fill" data-width="96.75" style="background:linear-gradient(to left,#06b6d4,#3b82f6);"></div>
+        </div>
+      </div>
+
+      <!-- معيار الشفافية والإفصاح ─ purple→pink -->
+      <div class="gsub-bar-card">
+        <div class="gsub-bar-card__head">
+          <span class="gsub-bar-card__pct" style="color:#a855f7;">98.00%</span>
+          <span class="gsub-bar-card__label">معيار الشفافية والإفصاح</span>
+        </div>
+        <div class="gsub-bar-card__track">
+          <div class="gsub-bar-card__fill" data-width="98" style="background:linear-gradient(to left,#ec4899,#a855f7);"></div>
+        </div>
+      </div>
+
+      <!-- معيار السلامة المالية ─ orange→red -->
+      <div class="gsub-bar-card">
+        <div class="gsub-bar-card__head">
+          <span class="gsub-bar-card__pct" style="color:#f97316;">93.04%</span>
+          <span class="gsub-bar-card__label">معيار السلامة المالية</span>
+        </div>
+        <div class="gsub-bar-card__track">
+          <div class="gsub-bar-card__fill" data-width="93.04" style="background:linear-gradient(to left,#ef4444,#f97316);"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── الشهادات والوثائق ── -->
+    <h2 class="gsub-section-title">الشهادات والوثائق</h2>
+
+    <a href="{% static 'pdf/governace percentage.pdf' %}" target="_blank" class="gsub-doc-card">
+      <div class="gsub-doc-card__text">
+        <p class="gsub-doc-card__name">شهادة درجة الحوكمة</p>
+        <p class="gsub-doc-card__desc">الشهادة الرسمية لدرجة تقييم الحوكمة</p>
+        <p class="gsub-doc-card__meta">PDF • 1.8 MB</p>
+      </div>
+      <span class="gsub-doc-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+      </span>
+    </a>
+
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/governance_rating.js' %}"></script>
+{% endblock %}

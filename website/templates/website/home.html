@@ -1,0 +1,184 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section-new">
+    <div class="container">
+        <div class="hero-grid">
+            <!-- Right Side - Text Content -->
+            <div class="hero-content">
+                <p class="hero-subtitle">لأثر يمتد</p>
+                <h1 class="hero-title-new">جمعية إعمار </h1>
+                <p class="hero-description">
+                    أول جمعية  هندسية مرخصة برقم (2023) تعنى بالمجالات التنموية والهندسية وتهدف
+                    إلى صيانة وتشغيل وتطوير وترميم المباني ورفع كفاءة مطوري خدمات تشغيل المباني
+                    وصيانتها وترميمها وإدارة مرافقها بمنطقة المدينة المنورة.
+                </p>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid-new">
+                    <div class="stat-item-new">
+                        <div class="stat-number-new">191</div>
+                        <p class="stat-label-new">عدد المشاريع</p>
+                    </div>
+                    <div class="stat-item-new">
+                        <div class="stat-number-new">28,836</div>
+                        <p class="stat-label-new">عدد المستفيدين</p>
+                    </div>
+                    <div class="stat-item-new">
+                        <div class="stat-number-new">28,001</div>
+                        <p class="stat-label-new">عدد المستفيدين من ترميم وصيانة المساجد والجوامع</p>
+                    </div>
+                    <div class="stat-item-new">
+                        <div class="stat-number-new">835</div>
+                        <p class="stat-label-new">عدد المستفيدين من ترميم وصيانة المنازل وتوفير الوحدات السكنية</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left Side - Campaign Card -->
+            <div class="hero-campaign-card">
+                <div class="campaign-image-wrapper">
+                    <img src="{% static 'images/store4.webp' %}" alt="صورة مسجد المدينة المنورة" class="campaign-image">
+                    <div class="campaign-overlay">
+                        <h3 class="campaign-overlay-title">ساهم معنا بتامين الاجهزة الكهربائية والاثاث لمنزل أسر من الأسر الايتام والمطلقات و الأسر الأشد حاجة     </h3>
+                    </div>
+                </div>
+                
+                <div class="campaign-card-content">
+                   
+                    <div class="campaign-donation-type">
+                        <span class="donation-badge">oneTimeDonation</span>
+                    </div>
+                    
+                    <h4 class="campaign-card-title">صدقتك تغنيهم عن السؤال</h4>
+                    <p class="campaign-card-description">ساهم في ترميم وصيانة  منازل المحتاجين في المدينة المنورة</p>
+                    
+                    
+                    <a href="https://store.emaar.org.sa/ar/%D8%B5%D8%AF%D9%82%D8%AA%D9%83-%D8%AA%D8%BA%D9%86%D9%8A%D9%87%D9%85-%D8%B9%D9%86-%D8%A7%D9%84%D8%B3%D8%A4%D8%A7%D9%84-%D8%AA%D8%A3%D9%85%D9%8A%D9%86-%D8%A7%D9%84%D8%A3%D8%AC%D9%87%D8%B2%D8%A9-%D9%88%D8%A7%D9%84%D8%A3%D8%AB%D8%A7%D8%AB/p451835573" target="_blank" class="btn-donate-card">
+                        تبرع الآن
+                        <svg class="donate-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Campaigns Section -->
+<section class="py-16 bg-gray-light">
+    <div class="container">
+        <div class="flex justify-between items-center mb-12">
+            <div>
+                <p class="text-primary mb-2">مشاريعنا وبرامجنا</p>
+                <h2>أجر لا ينقطع من حرم الله وجوار رسوله ﷺ</h2>
+            </div>
+            <a href="https://store.emaar.org.sa/ar" target="_blank" class="btn-secondary">عرض الكل</a>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Campaign 1 -->
+            <div class="campaign-card">
+                <div class="h-48 bg-gray-200">
+                    <img src="{% static 'images/store2.png' %}" alt="ترميم المساجد" class="campaign-image image-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="mb-2">النصف الاخير من التأسيس </h3>
+                    <p class="text-gray text-sm mb-4">ساهم في ترميم وصيانة بيوت الله في المدينة المنورة</p>
+                    
+                    
+                    <a href="https://store.emaar.org.sa/ar/النصف-الأخير-من-التأسيس-صدقة-جارية/p117862894" target="_blank" class="btn-primary w-full text-center">تبرع الآن</a>
+                </div>
+            </div>
+
+            <!-- Campaign 2 -->
+            <div class="campaign-card">
+                <div class="h-48 bg-gray-200">
+                    <img src="{% static 'images/store3.png' %}" alt="ترميم المنازل" class="campaign-image image-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="mb-2">خلك قريب من الحرم </h3>
+                    <p class="text-gray text-sm mb-4">ساهم في توفير سكن كريم للأسر المحتاجة</p>
+                    
+                    
+                    <a href="https://store.emaar.org.sa/ar/حسناتك-في-الحرم-لا-تنقطع-صدقة-جارية/p1491494316" target="_blank" class="btn-primary w-full text-center">تبرع الآن</a>
+                </div>
+            </div>
+
+            <!-- Campaign 3 -->
+            <div class="campaign-card">
+                <div class="h-48 bg-gray-200">
+                    <img src="{% static 'images/store4.png' %}" alt="صيانة المرافق" class="campaign-image image-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="mb-2">متسابقين في الحرم </h3>
+                    <p class="text-gray text-sm mb-4">المساهمة في صيانة وتشغيل المرافق العامة</p>
+                    
+
+                    
+                    <a href="https://store.emaar.org.sa/ar/متسابقين-في-الحرم/p2120566261" target="_blank" class="btn-primary w-full text-center">تبرع الآن</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section class="py-16 bg-gray-light">
+    <div class="container">
+        <div class="text-center mb-12">
+            <p class="text-primary mb-2">آخر الأخبار والفعاليات</p>
+            <h2>أخبار الجمعية</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            {% for item in news_items %}
+            <!-- News {{ forloop.counter }} -->
+            <div class="card">
+                <div class="h-48 bg-gray-200 overflow-hidden">
+                    <img src="{% static item.image %}" alt="{{ item.title }}" class="campaign-image image-cover">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 text-gray text-sm mb-3">
+                        <span>📅</span>
+                        <span>{{ item.date }}</span>
+                    </div>
+                    <h3 class="mb-3">{{ item.title }}</h3>
+                    <p class="text-gray text-sm mb-4">{{ item.description|truncatewords:20 }}</p>
+                    <a href="{% url 'website:news_detail' item.slug %}" class="btn-primary w-full text-center">اقرأ المزيد ←</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="{% url 'website:news' %}" class="btn-secondary">عرض جميع الأخبار</a>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-container">
+            <div class="newsletter-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+            </div>
+            <h2 class="newsletter-title">اشترك في نشرتنا البريدية</h2>
+            <p class="newsletter-description">احصل على آخر الأخبار والتحديثات</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="أدخل بريدك الإلكتروني" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">
+                    اشترك
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

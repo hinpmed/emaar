@@ -1,0 +1,59 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}{{ page_title }} - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* hide the normal page padding; PDF must bleed edge-to-edge */
+    .pdf-viewer-wrap {
+        width: 100%;
+        height: calc(100vh - 80px);   /* viewport minus header height */
+        margin: 0;
+        padding: 0;
+    }
+    .pdf-viewer-wrap object,
+    .pdf-viewer-wrap iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    /* fallback link styling */
+    .pdf-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        flex-direction: column;
+        gap: 16px;
+        color: #6b7280;
+        font-size: 1.1rem;
+    }
+    .pdf-fallback a {
+        color: #5ba8c8;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 2px solid #5ba8c8;
+        padding-bottom: 2px;
+    }
+    .pdf-fallback a:hover {
+        color: #3a8aad;
+        border-color: #3a8aad;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="pdf-viewer-wrap">
+    <object data="{{ pdf_url }}" type="application/pdf">
+        <!-- Chrome / Edge render PDF natively; Firefox needs embed fallback -->
+        <iframe src="{{ pdf_url }}" title="{{ page_title }}"></iframe>
+        <!-- Ultimate fallback for browsers that block both -->
+        <div class="pdf-fallback">
+            <p>لا يمكن عرض ملف PDF مباشرة في متصفحك.</p>
+            <a href="{{ pdf_url }}" download>تحميل الملف التعريفي</a>
+        </div>
+    </object>
+</div>
+{% endblock %}

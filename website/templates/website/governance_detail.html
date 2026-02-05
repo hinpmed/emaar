@@ -1,0 +1,51 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}{{ section_title }} - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/governance.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="gov-soon">
+    <div class="container">
+        <div class="gov-soon__box">
+
+            <!-- Animated progress ring -->
+            <div class="gov-soon__ring">
+                <svg class="gov-soon__svg" viewBox="0 0 100 100">
+                    <circle class="gov-soon__track"    cx="50" cy="50" r="40"/>
+                    <circle class="gov-soon__progress" cx="50" cy="50" r="40"/>
+                </svg>
+                <span class="gov-soon__emoji">⏳</span>
+            </div>
+
+            <!-- Badge -->
+            <span class="gov-soon__badge">قريباً</span>
+
+            <!-- Section name -->
+            <h1 class="gov-soon__title">{{ section_title }}</h1>
+
+            <!-- Sub-line -->
+            <p class="gov-soon__sub">سيتم التفعيل قريباً</p>
+
+            <!-- Body -->
+            <p class="gov-soon__desc">
+                نعمل بجهد على إطلاق هذه الصفحة بأقرب وقت ممكن.<br>
+                شكراً لصبرك وثقتك بجمعية إعمار.
+            </p>
+
+            <!-- Back link -->
+            <a href="{% url 'website:governance' %}" class="gov-soon__back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"/>
+                    <polyline points="12 19 5 12 12 5"/>
+                </svg>
+                العودة إلى الحوكمة
+            </a>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

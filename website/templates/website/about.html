@@ -1,0 +1,314 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}من نحن - جمعية إعمار{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ===================== HERO SECTION ===================== -->
+<section class="about-hero">
+    <div class="about-hero__bg">
+        <img src="{% static 'images/cover1.png' %}" alt="غطاء من نحن">
+    </div>
+    <div class="about-hero__overlay"></div>
+    <div class="about-hero__content">
+        <p class="about-hero__label">من نحن</p>
+        <h1 class="about-hero__title">جمعية إعمار - لأثر يمتد</h1>
+    </div>
+</section>
+
+<!-- ===================== INTRO SECTION ===================== -->
+<section class="about-intro">
+    <div class="container">
+        <h2 class="about-intro__heading">جمعية إعمار</h2>
+        <p class="about-intro__text">
+            تعنى بالمجالات التنموية والهندسية وتهدف إلى صيانة وتشغيل وترميم وتطوير المباني ورفع كفاءة خدمات تشغيل المباني
+            وصيانتها وإدارة مرافقها بمنطقة المدينة المنورة.
+        </p>
+    </div>
+</section>
+
+<!-- ===================== THREE IMAGES ROW ===================== -->
+<section class="about-images">
+    <div class="container">
+        <div class="about-images__grid">
+            <div class="about-images__item">
+                <img src="{% static 'images/about1.png' %}" alt="الفريق">
+            </div>
+            <div class="about-images__item">
+                <img src="{% static 'images/about2.png' %}" alt="البناء">
+            </div>
+            <div class="about-images__item">
+                <img src="{% static 'images/about3.png' %}" alt="المسجد">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== VISION & MISSION ===================== -->
+<section class="about-vm">
+    <div class="container">
+        <div class="about-vm__grid">
+            <!-- Mission -->
+            <div class="about-vm__card">
+                <div class="about-vm__icon-wrap">
+                    <div class="about-vm__icon">
+                        <!-- target / mission icon -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="about-vm__title">الرسالة</h3>
+                <p class="about-vm__desc">
+                    تحقيق تنمية حضرية مستدامة من خلال خدمات تنموية وإسكانية في بيئة
+                    مؤسسية متميزة وشراكات مجتمعية فاعلة
+                </p>
+            </div>
+            <!-- Vision -->
+            <div class="about-vm__card">
+                <div class="about-vm__icon-wrap">
+                    <div class="about-vm__icon">
+                        <!-- eye / vision icon -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="about-vm__title">الرؤية</h3>
+                <p class="about-vm__desc">
+                    نموذج ريادي في التنمية الحضرية بمنطقة المدينة المنورة
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== VALUES ===================== -->
+<section class="about-values">
+    <div class="container">
+        <h2 class="about-values__heading">القيم</h2>
+        <div class="about-values__grid">
+            <!-- المبادرة -->
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="9" y1="21" x2="9" y2="9"/>
+                    </svg>
+                </div>
+                <h4 class="about-values__label">المبادرة</h4>
+            </div>
+            <!-- المصداقية -->
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h4 class="about-values__label">المصداقية</h4>
+            </div>
+            <!-- الإبداع -->
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        <polyline points="17 6 23 6 23 12"/>
+                    </svg>
+                </div>
+                <h4 class="about-values__label">الإبداع</h4>
+            </div>
+            <!-- الإتقان -->
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="6"/>
+                        <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+                    </svg>
+                </div>
+                <h4 class="about-values__label">الإتقان</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== ASSOCIATION GOALS ===================== -->
+<section class="about-goals">
+    <div class="container">
+        <p class="about-goals__sub">نطمح لتحقيق</p>
+        <h2 class="about-goals__heading">أهداف الجمعية</h2>
+        <div class="about-goals__grid">
+            <div class="about-goals__card">
+                <p class="about-goals__text">تقديم خدمات إنشاء المباني وترميمها وصيانتها وتشغيلها.</p>
+            </div>
+            <div class="about-goals__card">
+                <p class="about-goals__text">العمل على رفع كفاءة مطوري خدمات إنشاء المباني وصيانتها وإدارة مرافقها</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== OPERATIONAL GOALS ===================== -->
+<section class="about-opgoals">
+    <div class="container">
+        <h2 class="about-opgoals__heading">الأهداف التشغيلية</h2>
+        <div class="about-opgoals__grid">
+            <!-- بناء شراكات -->
+            <div class="about-opgoals__card">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                </div>
+                <h4 class="about-opgoals__label">بناء شراكات مجتمعية فاعلة</h4>
+            </div>
+            <!-- خدمات حضرية -->
+            <div class="about-opgoals__card">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </div>
+                <h4 class="about-opgoals__label">تقديم خدمات حضرية رياضية في التنمية والإسكان</h4>
+            </div>
+            <!-- بيئة مؤسسية -->
+            <div class="about-opgoals__card">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="9" y1="21" x2="9" y2="9"/>
+                    </svg>
+                </div>
+                <h4 class="about-opgoals__label">تطوير بيئة مؤسسية متميزة</h4>
+            </div>
+            <!-- استقطاب كفاءات -->
+            <div class="about-opgoals__card">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="11" cy="7" r="4"/>
+                        <line x1="19" y1="8" x2="19" y2="14"/>
+                        <line x1="16" y1="11" x2="22" y2="11"/>
+                    </svg>
+                </div>
+                <h4 class="about-opgoals__label">استقطاب وتأهيل كفاءات بشرية متخصصة</h4>
+            </div>
+            <!-- تنمية موارد مالية -->
+            <div class="about-opgoals__card about-opgoals__card--center">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="16"/>
+                        <line x1="8" y1="12" x2="16" y2="12"/>
+                    </svg>
+                </div>
+                <h4 class="about-opgoals__label">تنمية موارد مالية متنوعة ومتنامية للجمعية</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== STATS BANNER ===================== -->
+<!-- ===================== STATS BANNER ===================== -->
+<section class="about-stats">
+    <div class="container">
+        <div class="about-stats__years">
+            <span class="about-stats__years-num">٤</span>
+            <p class="about-stats__years-label">سنوات من العطاء</p>
+        </div>
+        <h2 class="about-stats__heading">الجمعية في أرقام واحصائية</h2>
+        <div class="about-stats__grid">
+            <div class="about-stats__card">
+                <span class="about-stats__number" data-target="191">٠</span>
+                <p class="about-stats__label">عدد المشاريع</p>
+            </div>
+            <div class="about-stats__card">
+                <span class="about-stats__number" data-target="28581">٠</span>
+                <p class="about-stats__label">عدد المستفيدين</p>
+            </div>
+            <div class="about-stats__card">
+                <span class="about-stats__number" data-target="28001">٠</span>
+                <p class="about-stats__label">عدد المستفيدين من ترميم وصيانة المساجد والجوامع</p>
+            </div>
+            <div class="about-stats__card">
+                <span class="about-stats__number" data-target="580">٠</span>
+                <p class="about-stats__label">عدد المستفيدين من ترميم وصيانة المنازل وتوفير الوحدات السكنية</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PROFILE DOWNLOADS ===================== -->
+<section class="about-profile">
+    <div class="container">
+        <h2 class="about-profile__heading">الملف التعريفي</h2>
+        <div class="about-profile__grid">
+
+            <!-- Arabic profile -->
+            <a href="{% url 'website:pdf_view_ar' %}" target="_blank" class="about-profile__card about-profile__card--ar">
+                <div class="about-profile__icon">
+                    <!-- PDF icon -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                <div class="about-profile__body">
+                    <h3 class="about-profile__title">الملف التعريفي باللغة العربية</h3>
+                    <p class="about-profile__sub">اضغط للعرض</p>
+                </div>
+                <div class="about-profile__arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"/>
+                        <polyline points="7 7 17 7 17 17"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- English profile -->
+            <a href="{% url 'website:pdf_view_en' %}" target="_blank" class="about-profile__card about-profile__card--en">
+                <div class="about-profile__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                <div class="about-profile__body">
+                    <h3 class="about-profile__title">Company Profile in English</h3>
+                    <p class="about-profile__sub">Click to view</p>
+                </div>
+                <div class="about-profile__arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"/>
+                        <polyline points="7 7 17 7 17 17"/>
+                    </svg>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

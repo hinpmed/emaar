@@ -1,0 +1,49 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}اللجان الدائمة - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/governance_sub.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="gsub-page">
+  <div class="container">
+
+    <!-- ── back link ── -->
+    <div class="gsub-back-row">
+      <a href="{% url 'website:governance' %}" class="gsub-back">
+        العودة للحوكمة
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- ── hero ── -->
+    <div class="gsub-hero">
+      <div class="gsub-hero__icon" style="background:#7c3aed;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+        </svg>
+      </div>
+      <h1 class="gsub-hero__title">اللجان الدائمة</h1>
+      <p  class="gsub-hero__sub">معلومات عن اللجان الدائمة في الجمعية</p>
+    </div>
+
+    <!-- ── empty state ── -->
+    <div class="gsub-empty">
+      <div class="gsub-empty__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="2rem">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8"  x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+      </div>
+      <h2 class="gsub-empty__title">لا توجد لجان دائمة حالياً</h2>
+      <p  class="gsub-empty__desc">لا يوجد لجان دائمة لدى جمعية إعمار في الوقت الحالي</p>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

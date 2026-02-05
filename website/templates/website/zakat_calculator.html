@@ -1,0 +1,270 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/zakat.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="zakat-page">
+    <div class="container">
+        <!-- Back Link -->
+        <a href="{% url 'website:home' %}" class="zakat-back-link">
+            ← العودة للرئيسية
+        </a>
+
+        <!-- Header -->
+        <div class="zakat-header">
+            <div class="zakat-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"/>
+                    <line x1="3" y1="9" x2="21" y2="9" stroke-width="2"/>
+                    <line x1="9" y1="21" x2="9" y2="9" stroke-width="2"/>
+                    <circle cx="6" cy="6" r="1" fill="currentColor"/>
+                    <circle cx="6" cy="15" r="1" fill="currentColor"/>
+                    <circle cx="15" cy="6" r="1" fill="currentColor"/>
+                </svg>
+            </div>
+            <h1 class="zakat-page-title">حاسبة الزكاة</h1>
+            <p class="zakat-page-subtitle">احسب زكاة مالك بسهولة ودقة وفقًا للشريعة الإسلامية</p>
+        </div>
+
+        <!-- Info Box -->
+        <div class="zakat-info-box">
+            <div class="zakat-info-header">
+                <h3 class="zakat-info-title">
+                    <svg class="zakat-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10" stroke-width="2"/>
+                        <path d="M12 16v-4M12 8h.01" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    معلومات مهمة
+                </h3>
+            </div>
+            <ul class="zakat-info-list">
+                <li>نصاب الزكاة = 85 جرام ذهب عيار 24 (حاليًا: 21250.00 ريال)</li>
+                <li>نسبة الزكاة = 2.5% من إجمالي المال</li>
+                <li>تجب الزكاة إذا بلغ المال النصاب وحال عليه الحول (سنة قمرية)</li>
+                <li>يمكنك تعديل أسعار الذهب والفضة حسب السعر الحالي</li>
+            </ul>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="zakat-content-grid">
+            <!-- Results Panel (Left) -->
+            <div class="zakat-results-panel">
+                <h2 class="zakat-results-title">نتيجة الحساب</h2>
+                
+                <!-- Total Assets -->
+                <div class="zakat-result-card">
+                    <p class="zakat-result-label">إجمالي الأموال</p>
+                    <h3 class="zakat-result-amount" id="totalAssets">0.00 ريال</h3>
+                </div>
+
+                <!-- Nisab Status -->
+                <div class="zakat-result-card">
+                    <p class="zakat-result-label">النصاب</p>
+                    <h3 class="zakat-result-amount" id="nisabAmount">21250.00 ريال</h3>
+                    <p class="zakat-result-note" id="nisabStatus">❌ لم يبلغ المال النصاب</p>
+                </div>
+
+                <!-- Zakat Amount -->
+                <div class="zakat-nisab-card">
+                    <p class="zakat-nisab-label">مبلغ الزكاة المستحق</p>
+                    <h3 class="zakat-nisab-amount" id="zakatAmount">0.00 ريال</h3>
+                    <p class="zakat-nisab-note">(2.5% من الإجمالي)</p>
+                </div>
+            </div>
+
+            <!-- Input Form (Right) -->
+            <div class="zakat-input-panel">
+                <!-- Current Prices -->
+                <h2 class="zakat-section-title">الأسعار الحالية</h2>
+                <div class="zakat-prices-grid">
+                    <div>
+                        <label class="zakat-price-label">سعر جرام الذهب (ريال)</label>
+                        <div class="zakat-price-display">250</div>
+                    </div>
+                    <div>
+                        <label class="zakat-price-label">سعر جرام الفضة (ريال)</label>
+                        <div class="zakat-price-display">3</div>
+                    </div>
+                </div>
+
+                <!-- Input Assets -->
+                <div class="zakat-section">
+                    <h2 class="zakat-section-title">أدخل أموالك</h2>
+                    
+                    <div class="zakat-input-group">
+                        <label class="zakat-input-label">النقود</label>
+                        <div class="zakat-input-wrapper">
+                            <input type="number" class="zakat-input" id="cash" placeholder="0" min="0" step="0.01">
+                            <span class="zakat-currency-symbol">﷼</span>
+                        </div>
+                    </div>
+
+                    <div class="zakat-input-group">
+                        <label class="zakat-input-label">الذهب (بالجرام)</label>
+                        <div class="zakat-input-wrapper">
+                            <input type="number" class="zakat-input" id="gold" placeholder="0" min="0" step="0.01">
+                            <span class="zakat-currency-symbol">﷼</span>
+                        </div>
+                    </div>
+
+                    <div class="zakat-input-group">
+                        <label class="zakat-input-label">الفضة (بالجرام)</label>
+                        <div class="zakat-input-wrapper">
+                            <input type="number" class="zakat-input" id="silver" placeholder="0" min="0" step="0.01">
+                            <span class="zakat-currency-symbol">﷼</span>
+                        </div>
+                    </div>
+
+                    <div class="zakat-input-group">
+                        <label class="zakat-input-label">الأسهم والاستثمارات</label>
+                        <div class="zakat-input-wrapper">
+                            <input type="number" class="zakat-input" id="stocks" placeholder="0" min="0" step="0.01">
+                            <span class="zakat-currency-symbol">﷼</span>
+                        </div>
+                    </div>
+
+                    <div class="zakat-input-group">
+                        <label class="zakat-input-label">البضائع التجارية</label>
+                        <div class="zakat-input-wrapper">
+                            <input type="number" class="zakat-input" id="goods" placeholder="0" min="0" step="0.01">
+                            <span class="zakat-currency-symbol">﷼</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Cards -->
+        <div class="zakat-info-cards-grid">
+            <!-- Card 1 -->
+            <div class="zakat-info-card">
+                <h3 class="zakat-info-card-title">شروط وجوب الزكاة</h3>
+                <ul class="zakat-info-card-list">
+                    <li>الإسلام</li>
+                    <li>الحرية</li>
+                    <li>ملك النصاب</li>
+                    <li>حولان الحول</li>
+                    <li>السلامة من الدين</li>
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="zakat-info-card">
+                <h3 class="zakat-info-card-title">مصارف الزكاة</h3>
+                <ul class="zakat-info-card-list">
+                    <li>الفقراء والمساكين</li>
+                    <li>العاملون عليها</li>
+                    <li>المؤلفة قلوبهم</li>
+                    <li>في الرقاب</li>
+                    <li>الغارمون</li>
+                    <li>في سبيل الله</li>
+                    <li>ابن السبيل</li>
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="zakat-info-card">
+                <h3 class="zakat-info-card-title">أموال تجب فيما الزكاة</h3>
+                <ul class="zakat-info-card-list">
+                    <li>الأوراق النقدية</li>
+                    <li>الذهب والفضة</li>
+                    <li>عروض التجارة</li>
+                    <li>الأسهم والسندات</li>
+                    <li>الزروع والثمار</li>
+                    <li>الأنعام السائمة</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Zakat Calculator JavaScript
+(function() {
+    const GOLD_PRICE = 250;
+    const SILVER_PRICE = 3;
+    const NISAB_GOLD_GRAMS = 85;
+    const ZAKAT_PERCENTAGE = 0.025;
+
+    // Get all input elements
+    const inputs = {
+        cash: document.getElementById('cash'),
+        gold: document.getElementById('gold'),
+        silver: document.getElementById('silver'),
+        stocks: document.getElementById('stocks'),
+        goods: document.getElementById('goods')
+    };
+
+    // Get result elements
+    const results = {
+        totalAssets: document.getElementById('totalAssets'),
+        nisabAmount: document.getElementById('nisabAmount'),
+        nisabStatus: document.getElementById('nisabStatus'),
+        zakatAmount: document.getElementById('zakatAmount')
+    };
+
+    // Calculate nisab
+    const nisabAmount = NISAB_GOLD_GRAMS * GOLD_PRICE;
+
+    // Update nisab display
+    results.nisabAmount.textContent = nisabAmount.toFixed(2) + ' ريال';
+
+    // Format number with commas
+    function formatNumber(num) {
+        return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    // Calculate zakat
+    function calculateZakat() {
+        // Get input values
+        const cash = parseFloat(inputs.cash.value) || 0;
+        const goldGrams = parseFloat(inputs.gold.value) || 0;
+        const silverGrams = parseFloat(inputs.silver.value) || 0;
+        const stocks = parseFloat(inputs.stocks.value) || 0;
+        const goods = parseFloat(inputs.goods.value) || 0;
+
+        // Convert gold and silver to currency
+        const goldValue = goldGrams * GOLD_PRICE;
+        const silverValue = silverGrams * SILVER_PRICE;
+
+        // Calculate total assets
+        const totalAssets = cash + goldValue + silverValue + stocks + goods;
+
+        // Calculate zakat
+        let zakatAmount = 0;
+        let nisabReached = false;
+
+        if (totalAssets >= nisabAmount) {
+            zakatAmount = totalAssets * ZAKAT_PERCENTAGE;
+            nisabReached = true;
+        }
+
+        // Update results
+        results.totalAssets.textContent = formatNumber(totalAssets) + ' ريال';
+        results.zakatAmount.textContent = formatNumber(zakatAmount) + ' ريال';
+
+        // Update nisab status
+        if (nisabReached) {
+            results.nisabStatus.innerHTML = '✅ بلغ المال النصاب';
+            results.nisabStatus.style.color = '#22c55e';
+        } else {
+            results.nisabStatus.innerHTML = '❌ لم يبلغ المال النصاب';
+            results.nisabStatus.style.color = 'rgba(255, 255, 255, 0.8)';
+        }
+    }
+
+    // Add event listeners to all inputs
+    Object.values(inputs).forEach(input => {
+        input.addEventListener('input', calculateZakat);
+    });
+
+    // Initial calculation
+    calculateZakat();
+})();
+</script>
+{% endblock %}

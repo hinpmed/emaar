@@ -1,0 +1,81 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}خدمات الجمعية - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="svc-page">
+    <div class="container">
+
+        <!-- ─── Heading ─── -->
+        <div class="svc-page__header">
+            <h1 class="svc-page__title">خدمات الجمعية</h1>
+            <p class="svc-page__sub">نقدم مجموعة متنوعة من الخدمات الإلكترونية لخدمة المستفيدين والمتطوعين والشركاء</p>
+        </div>
+
+        <!-- ─── Filter bar ─── -->
+        <div class="svc-bar">
+            <!-- Pills -->
+            <div class="svc-bar__pills" id="filterPills">
+                <button class="svc-pill svc-pill--active" data-filter="all">الكل</button>
+                <button class="svc-pill" data-filter="عام">عام</button>
+                <button class="svc-pill" data-filter="حوكمة">حوكمة</button>
+                <button class="svc-pill" data-filter="تطوع">تطوع</button>
+                <button class="svc-pill" data-filter="توظيف">توظيف</button>
+                <button class="svc-pill" data-filter="تبرع">تبرع</button>
+                <button class="svc-pill" data-filter="مستفيد">مستفيد</button>
+            </div>
+
+            <!-- Filter funnel icon -->
+            <span class="svc-bar__funnel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+                </svg>
+            </span>
+
+            <!-- Search box -->
+            <div class="svc-bar__search">
+                <input type="text" id="svcSearch" class="svc-bar__input" placeholder="ابحث عن خدمة…" autocomplete="off">
+                <span class="svc-bar__search-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <!-- ─── Cards Grid ─── -->
+        <div class="svc-grid" id="svcGrid">
+            {% for s in services %}
+            <a href="{% url 'website:service_detail' s.id %}"
+               class="svc-card"
+               data-category="{{ s.category }}"
+               data-title="{{ s.title }}"
+               data-desc="{{ s.description }}">
+
+                <span class="svc-card__badge svc-badge--{{ s.category }}">{{ s.category }}</span>
+                <div class="svc-card__icon">{{ s.icon }}</div>
+                <h3 class="svc-card__title">{{ s.title }}</h3>
+                <p class="svc-card__desc">{{ s.description }}</p>
+            </a>
+            {% endfor %}
+        </div>
+
+        <!-- ─── Empty state ─── -->
+        <div class="svc-empty" id="svcEmpty">
+            <span class="svc-empty__icon">🔍</span>
+            <p class="svc-empty__text">لا توجد خدمات تطابق البحث</p>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/services.js' %}"></script>
+{% endblock %}

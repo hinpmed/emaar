@@ -1,0 +1,89 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}القوائم المالية - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/governance_sub.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="gsub-page">
+  <div class="container">
+
+    <!-- ── back link ── -->
+    <div class="gsub-back-row">
+      <a href="{% url 'website:governance' %}" class="gsub-back">
+        العودة للحوكمة
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- ── hero ── -->
+    <div class="gsub-hero">
+      <div class="gsub-hero__icon" style="background:#22c55e;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23"/>
+          <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+        </svg>
+      </div>
+      <h1 class="gsub-hero__title">القوائم المالية</h1>
+      <p  class="gsub-hero__sub">الميزانيات المالية المعتمدة للأعوام السابقة</p>
+    </div>
+
+    <!-- ── 2×2 year cards ── -->
+    <div class="gsub-fin-grid">
+
+      <!-- 2024 -->
+      <a href="{% static 'pdf/الميزانية المالية للعام 2024م.pdf' %}" target="_blank" class="gsub-fin-card">
+        <div class="gsub-fin-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+          </svg>
+        </div>
+        <h3 class="gsub-fin-card__year">الميزانية المالية للعام 2024م</h3>
+        <p  class="gsub-fin-card__cta">اضغط للعرض التفاصيل</p>
+      </a>
+
+      <!-- 2023 -->
+      <a href="{% static 'pdf/الميزانية المالية للعام 2023م.pdf' %}" target="_blank" class="gsub-fin-card">
+        <div class="gsub-fin-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+          </svg>
+        </div>
+        <h3 class="gsub-fin-card__year">الميزانية المالية للعام 2023م</h3>
+        <p  class="gsub-fin-card__cta">اضغط للعرض التفاصيل</p>
+      </a>
+
+      <!-- 2022 -->
+      <a href="{% static 'pdf/الميزانية المالية للعام 2022م.pdf' %}" target="_blank" class="gsub-fin-card">
+        <div class="gsub-fin-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+          </svg>
+        </div>
+        <h3 class="gsub-fin-card__year">الميزانية المالية للعام 2022م</h3>
+        <p  class="gsub-fin-card__cta">اضغط للعرض التفاصيل</p>
+      </a>
+
+      <!-- 2021 -->
+      <a href="{% static 'pdf/الميزانية المالية عام 2021.pdf' %}" target="_blank" class="gsub-fin-card">
+        <div class="gsub-fin-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+          </svg>
+        </div>
+        <h3 class="gsub-fin-card__year">الميزانية المالية للعام 2021م</h3>
+        <p  class="gsub-fin-card__cta">اضغط للعرض التفاصيل</p>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+{% endblock %}

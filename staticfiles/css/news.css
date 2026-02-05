@@ -1,0 +1,349 @@
+/* ================================================
+   news.css  –  News Listing + News Detail pages
+   ================================================ */
+
+/* ── Listing Page Section ── */
+.news-page-section {
+    padding: 5rem 0 6rem;
+    background: #f7f9fc;
+    min-height: 100vh;
+}
+
+/* ── Centered Header ── */
+.news-page-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.news-page-subtitle {
+    color: var(--primary-color);       /* #76b6e9 */
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.news-page-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--text-dark);           /* #0c122e */
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.news-page-description {
+    color: var(--gray-600);            /* #4b5563 */
+    font-size: 1rem;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ── Cards Grid ── */
+.news-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+/* ── Single News Card ── */
+.news-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+/* Image wrapper – fixed height so all cards align */
+.news-card-image-wrapper {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+}
+
+.news-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-card-image {
+    transform: scale(1.05);
+}
+
+/* Category Badge – top-right (RTL: visually top-left, but start = right) */
+.news-card-badge {
+    position: absolute;
+    top: 1rem;
+    /* RTL: "right" in CSS maps to the visual left for ltr,
+       but since the page is dir=rtl, "right" IS the visual right.
+       The screenshot shows badge on the visual right → use right. */
+    right: 1rem;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.35rem 0.85rem;
+    border-radius: 2rem;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+/* ── Card Body ── */
+.news-card-body {
+    padding: 1.5rem 1.5rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;                           /* stretch so all cards same height */
+}
+
+/* Date row */
+.news-card-date {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    justify-content: flex-end;         /* RTL: pushes to visual right */
+    color: var(--gray-500);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.news-date-icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2;
+    color: var(--gray-500);
+    flex-shrink: 0;
+}
+
+/* Title */
+.news-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
+    text-align: right;
+}
+
+/* Description */
+.news-card-desc {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: right;
+    flex: 1;                           /* push read-more to bottom */
+    margin-bottom: 1rem;
+}
+
+/* Read More link */
+.news-card-read-more {
+    color: var(--primary-color);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-align: right;
+    display: block;
+    transition: color 0.2s ease;
+}
+
+.news-card:hover .news-card-read-more {
+    color: var(--primary-hover);       /* #5a9dd4 */
+}
+
+
+/* ================================================
+   News Detail Page
+   ================================================ */
+
+.news-detail-section {
+    padding: 3rem 0 5rem;
+    background: #f7f9fc;
+    min-height: 100vh;
+}
+
+/* Back link */
+.news-detail-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.news-detail-back:hover {
+    color: var(--primary-hover);
+    transform: translateX(4px);        /* RTL: moves visually left */
+}
+
+.news-detail-back-icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2;
+}
+
+/* Hero image container */
+.news-detail-hero {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    height: 380px;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.news-detail-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.news-detail-badge {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: var(--primary-color);
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    white-space: nowrap;
+}
+
+/* Article wrapper – max width for comfortable reading */
+.news-detail-article {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+/* Date */
+.news-detail-date {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    justify-content: flex-end;
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Title */
+.news-detail-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.3;
+    text-align: right;
+    margin-bottom: 1.75rem;
+}
+
+/* Body – rich-text area */
+.news-detail-body {
+    text-align: right;
+    color: var(--gray-700);
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.news-detail-body p {
+    margin-bottom: 1.25rem;
+}
+
+.news-detail-body p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ================================================
+   Responsive
+   ================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .news-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .news-page-section {
+        padding: 3rem 0 4rem;
+    }
+
+    .news-page-title {
+        font-size: 2rem;
+    }
+
+    .news-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .news-card-image-wrapper {
+        height: 220px;
+    }
+
+    /* Detail */
+    .news-detail-hero {
+        height: 240px;
+        margin-bottom: 1.75rem;
+    }
+
+    .news-detail-title {
+        font-size: 1.5rem;
+    }
+
+    .news-detail-body {
+        font-size: 0.975rem;
+    }
+}
+
+
+/* ================================================
+   Dark Mode
+   ================================================ */
+
+.dark .news-page-section,
+.dark .news-detail-section {
+    background: var(--dark-bg);        /* #0c122e */
+}
+
+.dark .news-card {
+    background: var(--dark-secondary); /* #1a2049 */
+}
+
+.dark .news-page-title,
+.dark .news-card-title,
+.dark .news-detail-title {
+    color: #ffffff;
+}
+
+.dark .news-page-description,
+.dark .news-card-desc,
+.dark .news-detail-body {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.dark .news-card-date,
+.dark .news-detail-date {
+    color: rgba(255, 255, 255, 0.5);
+}

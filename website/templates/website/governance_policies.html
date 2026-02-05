@@ -1,0 +1,182 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}اللوائح والسياسات - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/governance_sub.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="gsub-page">
+  <div class="container">
+
+    <!-- ── back link ── -->
+    <div class="gsub-back-row">
+      <a href="{% url 'website:governance' %}" class="gsub-back">
+        العودة للحوكمة
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- ── hero ── -->
+    <div class="gsub-hero">
+      <div class="gsub-hero__icon" style="background:#a855f7;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+      </div>
+      <h1 class="gsub-hero__title">اللوائح والسياسات</h1>
+      <p  class="gsub-hero__sub">جميع اللوائح والسياسات المعتمدة التي تنظم عمل الجمعية</p>
+    </div>
+
+    <!-- ════════════ اللوائح ════════════ -->
+    <div class="gsub-group-head">
+      <span class="gsub-group-head__label">اللوائح</span>
+      <span class="gsub-group-head__badge" style="background:#f3e8ff; color:#a855f7;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </span>
+    </div>
+
+    <div class="gsub-docs-grid">
+      <!-- اللائحة الأساسية -->
+      <a href="{% static 'pdf/اللائحة-الاساسية-5.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">اللائحة الأساسية</p>
+          <p class="gsub-doc-card__meta">PDF • 3.2 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </span>
+      </a>
+
+      <!-- لائحة الجمعية العمومية -->
+      <a href="{% static 'pdf/لائحة-الجمعية.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">لائحة الجمعية العمومية</p>
+          <p class="gsub-doc-card__meta">PDF • 2.8 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <!-- ════════════ السياسات ════════════ -->
+    <div class="gsub-group-head">
+      <span class="gsub-group-head__label">السياسات</span>
+      <span class="gsub-group-head__badge" style="background:#eff6ff; color:#3b82f6;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>
+          <polyline points="13 2 13 9 20 9"/>
+        </svg>
+      </span>
+    </div>
+
+    <div class="gsub-docs-grid">
+      <!-- 1 -->
+      <a href="{% static 'pdf/0016-سياسة-إدارة-المتطوعين.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">سياسة إدارة المتطوعين</p>
+          <p class="gsub-doc-card__meta">PDF • 1.5 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+      </a>
+      <!-- 2 -->
+      <a href="{% static 'pdf/003-سياسة-جمع-التبرعات.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">سياسة جمع التبرعات</p>
+          <p class="gsub-doc-card__meta">PDF • 1.8 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+      </a>
+      <!-- 3 -->
+      <a href="{% static 'pdf/0011-سياسة-الإحتفاظ-بالوثائق-وإتلافها.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">سياسة الاحتفاظ بالوثائق وإتلافها</p>
+          <p class="gsub-doc-card__meta">PDF • 1.3 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+      </a>
+      <!-- 4 -->
+      <a href="{% static 'pdf/008-سياسة-خصوصية-البيانات.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">سياسة خصوصية البيانات</p>
+          <p class="gsub-doc-card__meta">PDF • 2.1 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+      </a>
+      <!-- 5 -->
+      <a href="{% static 'pdf/0012-سياسة-تنظيم-العلاقة-مع-المستفيدين.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">سياسة تنظيم العلاقة مع المستفيدين</p>
+          <p class="gsub-doc-card__meta">PDF • 1.6 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+      </a>
+      <!-- 6 -->
+      <a href="{% static 'pdf/0014-سياسة-تعارض-المصالح.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">سياسة تعارض المصالح</p>
+          <p class="gsub-doc-card__meta">PDF • 1.2 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+      </a>
+      <!-- 7 -->
+      <a href="{% static 'pdf/الابلاغ عن المخالفات .pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">سياسة الإبلاغ عن المخالفات وحماية مقدمي البلاغات</p>
+          <p class="gsub-doc-card__meta">PDF • 1.4 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+      </a>
+      <!-- 8 -->
+      <a href="{% static 'pdf/005-سياسة-توجيه-مبلغ-التبرع-الى-مشروع-آخر.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">سياسة إعادة توجيه مبلغ التبرع</p>
+          <p class="gsub-doc-card__meta">PDF • 1.1 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+      </a>
+      <!-- 9 -->
+      <a href="{% static 'pdf/004-الية-استرداد-التبرع-للمتبرع.pdf' %}" target="_blank" class="gsub-doc-card">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">آلية استرداد التبرع للمتبرع</p>
+          <p class="gsub-doc-card__meta">PDF • 0.9 MB</p>
+        </div>
+        <span class="gsub-doc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </span>
+      </a>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

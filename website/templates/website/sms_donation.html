@@ -1,0 +1,102 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/donation.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="donation-page">
+    <div class="container">
+        <!-- Back Link -->
+        <a href="{% url 'website:home' %}" class="donation-back-link">
+            ← العودة للرئيسية
+        </a>
+
+        <!-- Header -->
+        <div class="donation-header">
+            <div class="donation-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="5" y="2" width="14" height="20" rx="2" stroke-width="2"/>
+                    <line x1="12" y1="18" x2="12" y2="18" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h1 class="donation-page-title">التبرع عبر الرسائل النصية</h1>
+            <p class="donation-page-subtitle">طريقة سهلة وآمنة للتبرع الشهري من خلال رسالة نصية واحدة</p>
+        </div>
+
+        <!-- SMS Hero Card -->
+        <div class="sms-hero-card">
+            <div class="sms-hero-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke-width="2"/>
+                </svg>
+            </div>
+            <h2 class="sms-hero-title">كيفية التبرع</h2>
+            
+            <div class="sms-instruction-box">
+                <p class="sms-instruction-label">أرسل</p>
+                <h3 class="sms-instruction-value">1</h3>
+            </div>
+            
+            <div class="sms-instruction-box">
+                <p class="sms-instruction-label">إلى</p>
+                <h3 class="sms-instruction-value">588272</h3>
+            </div>
+            
+            <div class="sms-cost-box">
+                <p class="sms-cost-label">للتبرع بـ</p>
+                <h3 class="sms-cost-value">12 ريال</h3>
+                <p class="sms-cost-period">شهرياً</p>
+            </div>
+        </div>
+
+        <!-- Steps -->
+        <div class="sms-steps-grid">
+            <div class="sms-step-card">
+                <div class="sms-step-number">1</div>
+                <h3 class="sms-step-title">افتح تطبيق الرسائل</h3>
+                <p class="sms-step-desc">افتح تطبيق الرسائل النصية في هاتفك</p>
+            </div>
+            
+            <div class="sms-step-card">
+                <div class="sms-step-number">2</div>
+                <h3 class="sms-step-title">اكتب الرقم 1</h3>
+                <p class="sms-step-desc">اكتب الرقم 1 في محتوى الرسالة</p>
+            </div>
+            
+            <div class="sms-step-card">
+                <div class="sms-step-number">3</div>
+                <h3 class="sms-step-title">أرسل إلى 588272</h3>
+                <p class="sms-step-desc">أرسل الرسالة إلى الرقم 588272</p>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="sms-features-box">
+            <h3 class="sms-features-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2"/>
+                </svg>
+                مميزات التبرع بالرسائل النصية
+            </h3>
+            <ul class="sms-features-list">
+                <li>سهولة في التبرع بدون الحاجة لإدخال بيانات بنكية</li>
+                <li>تبرع شهري منتظم يساعدنا على التخطيط للمشاريع</li>
+                <li>آمن ومعتمد من قبل هيئة الاتصالات</li>
+                <li>تصلك رسالة تأكيد فور نجاح عملية التبرع</li>
+            </ul>
+        </div>
+
+        <!-- Other Methods -->
+        <div class="other-methods-box">
+            <h2 class="other-methods-title">طرق تبرع أخرى</h2>
+            <p class="other-methods-desc">يمكنك أيضاً التبرع من خلال الطرق التالية</p>
+            <div class="other-methods-buttons">
+                <a href="{% url 'website:bank_accounts' %}" class="other-method-btn other-method-btn-primary">الحسابات البنكية</a>
+                <a href="https://store.emaar.org.sa" target="_blank" class="other-method-btn other-method-btn-secondary">المتجر الإلكتروني</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

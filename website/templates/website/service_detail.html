@@ -1,0 +1,51 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}{{ service_title }} - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="svc-soon">
+    <div class="container">
+        <div class="svc-soon__box">
+
+            <!-- Animated progress ring with hourglass inside -->
+            <div class="svc-soon__ring">
+                <svg class="svc-soon__svg" viewBox="0 0 100 100">
+                    <circle class="svc-soon__track"    cx="50" cy="50" r="40"/>
+                    <circle class="svc-soon__progress" cx="50" cy="50" r="40"/>
+                </svg>
+                <span class="svc-soon__emoji">⏳</span>
+            </div>
+
+            <!-- "قريباً" badge -->
+            <span class="svc-soon__badge">قريباً</span>
+
+            <!-- Service name -->
+            <h1 class="svc-soon__title">{{ service_title }}</h1>
+
+            <!-- Sub-heading -->
+            <p class="svc-soon__sub">سيتم التفعيل قريباً</p>
+
+            <!-- Body text -->
+            <p class="svc-soon__desc">
+                نعمل بجهد على إطلاق هذه الخدمة بأقرب وقت ممكن.<br>
+                شكراً لصبرك وثقتك بجمعية إعمار.
+            </p>
+
+            <!-- Back button -->
+            <a href="{% url 'website:services' %}" class="svc-soon__back">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"/>
+                    <polyline points="12 19 5 12 12 5"/>
+                </svg>
+                العودة إلى الخدمات
+            </a>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

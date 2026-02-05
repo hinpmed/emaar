@@ -1,0 +1,55 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/news.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- News Listing Page -->
+<section class="news-page-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="news-page-header">
+            <p class="news-page-subtitle">آخر الأخبار والفعاليات</p>
+            <h1 class="news-page-title">أخبار الجمعية</h1>
+            <p class="news-page-description">تابع آخر أخبار وإنجازات جمعية إعمار وتعرف على المشاريع الجديدة والفعاليات القادمة</p>
+        </div>
+
+        <!-- News Cards Grid -->
+        <div class="news-cards-grid">
+            {% for item in news_items %}
+            <a href="{% url 'website:news_detail' item.slug %}" class="news-card">
+                <!-- Image with Category Badge -->
+                <div class="news-card-image-wrapper">
+                    <img src="{% static item.image %}" alt="{{ item.title }}" class="news-card-image">
+                </div>
+
+                <!-- Text Content -->
+                <div class="news-card-body">
+                    <!-- Date -->
+                    <div class="news-card-date">
+                        <svg class="news-date-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        <span>{{ item.date }}</span>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="news-card-title">{{ item.title }}</h3>
+
+                    <!-- Description -->
+                    <p class="news-card-desc">{{ item.description }}</p>
+
+                    <!-- Read More -->
+                    <span class="news-card-read-more">اقرأ المزيد ←</span>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

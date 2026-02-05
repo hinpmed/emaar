@@ -1,0 +1,266 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}About Us - Emaar Association{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="about-hero">
+    <div class="about-hero__bg">
+        <img src="{% static 'images/hero-bg.jpg' %}" alt="Emaar Association">
+    </div>
+    <div class="about-hero__overlay"></div>
+    <div class="about-hero__content">
+        <p class="about-hero__label">Who We Are</p>
+        <h1 class="about-hero__title">Emaar Charitable Association for Engineering Development</h1>
+    </div>
+</section>
+
+<!-- Introduction -->
+<section class="about-intro">
+    <div class="container">
+        <h2 class="about-intro__heading">About the Association</h2>
+        <p class="about-intro__text">
+            Emaar Charitable Association for Engineering Development in the Madinah Region is a Saudi non-profit association 
+            licensed under No. (2023), specializing in developmental and engineering fields. It was established in 1446 AH 
+            to provide innovative solutions in building maintenance, restoration, and development.
+        </p>
+        <p class="about-intro__text">
+            The association aims to improve the infrastructure of public facilities and serve needy families by providing 
+            dignified housing and restoring buildings, with the participation of volunteer engineers and technicians.
+        </p>
+        <a href="{% url 'website:pdf_view_en' %}" class="about-intro__link">View Company Profile →</a>
+    </div>
+</section>
+
+<!-- Images Row -->
+<section class="about-images">
+    <div class="container">
+        <div class="about-images__grid">
+            <div class="about-images__item">
+                <img src="{% static 'images/about1.jpg' %}" alt="Our Work">
+            </div>
+            <div class="about-images__item">
+                <img src="{% static 'images/about2.jpg' %}" alt="Our Team">
+            </div>
+            <div class="about-images__item">
+                <img src="{% static 'images/about3.jpg' %}" alt="Our Impact">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vision & Mission -->
+<section class="about-vm">
+    <div class="container">
+        <div class="about-vm__grid">
+            <!-- Vision Card -->
+            <div class="about-vm__card">
+                <div class="about-vm__icon-wrap">
+                    <div class="about-vm__icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                    </div>
+                </div>
+                <h3 class="about-vm__title">Our Vision</h3>
+                <p class="about-vm__desc">
+                    To be the leading charitable engineering association in the Kingdom of Saudi Arabia in the field of 
+                    building maintenance and development, contributing to community development and improving quality of life.
+                </p>
+            </div>
+
+            <!-- Mission Card -->
+            <div class="about-vm__card">
+                <div class="about-vm__icon-wrap">
+                    <div class="about-vm__icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                </div>
+                <h3 class="about-vm__title">Our Mission</h3>
+                <p class="about-vm__desc">
+                    To provide innovative and sustainable solutions in the field of building maintenance, restoration, and development, 
+                    serving the community and needy families through qualified volunteers and strategic partnerships.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values -->
+<section class="about-values">
+    <div class="container">
+        <h2 class="about-values__heading">Our Values</h2>
+        <div class="about-values__grid">
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <p class="about-values__label">Professionalism</p>
+            </div>
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <p class="about-values__label">Quality</p>
+            </div>
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <p class="about-values__label">Teamwork</p>
+            </div>
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <p class="about-values__label">Innovation</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Association Goals -->
+<section class="about-goals">
+    <div class="container">
+        <p class="about-goals__sub">What We Aim For</p>
+        <h2 class="about-goals__heading">Association Goals</h2>
+        <div class="about-goals__grid">
+            <div class="about-goals__card">
+                <p class="about-goals__text">
+                    Maintenance, operation, development, and restoration of buildings and raising the efficiency of 
+                    developers in building services and facility management.
+                </p>
+            </div>
+            <div class="about-goals__card">
+                <p class="about-goals__text">
+                    Developing and training volunteer engineers and technicians to provide distinguished services 
+                    in the field of engineering works.
+                </p>
+            </div>
+            <div class="about-goals__card">
+                <p class="about-goals__text">
+                    Serving needy families and providing dignified housing through engineering development 
+                    and restoration programs.
+                </p>
+            </div>
+            <div class="about-goals__card">
+                <p class="about-goals__text">
+                    Contributing to community development and improving quality of life through sustainable 
+                    engineering projects.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Operational Goals -->
+<section class="about-opgoals">
+    <div class="container">
+        <h2 class="about-opgoals__heading">Operational Goals</h2>
+        <div class="about-opgoals__grid">
+            <div class="about-opgoals__card">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <p class="about-opgoals__label">Building Maintenance and Development</p>
+            </div>
+            <div class="about-opgoals__card">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                </div>
+                <p class="about-opgoals__label">Volunteer Development and Training</p>
+            </div>
+            <div class="about-opgoals__card">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <p class="about-opgoals__label">Quality Assurance and Standards</p>
+            </div>
+            <div class="about-opgoals__card">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <p class="about-opgoals__label">Community Partnerships</p>
+            </div>
+            <div class="about-opgoals__card about-opgoals__card--center">
+                <div class="about-opgoals__icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                </div>
+                <p class="about-opgoals__label">Awareness and Communication</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Banner -->
+<section class="about-stats">
+    <div class="container">
+        <div class="about-stats__years">
+            <span class="about-stats__years-num">3+</span>
+            <p class="about-stats__years-label">Years of Excellence</p>
+        </div>
+        <h2 class="about-stats__heading">Our Impact in Numbers</h2>
+        <div class="about-stats__grid">
+            <div class="about-stats__card">
+                <span class="about-stats__number" data-target="{{ stats.projects }}">0</span>
+                <p class="about-stats__label">Completed Projects</p>
+            </div>
+            <div class="about-stats__card">
+                <span class="about-stats__number" data-target="{{ stats.beneficiaries }}">0</span>
+                <p class="about-stats__label">Total Beneficiaries</p>
+            </div>
+            <div class="about-stats__card">
+                <span class="about-stats__number" data-target="{{ stats.mosques_beneficiaries }}">0</span>
+                <p class="about-stats__label">Mosque Restoration Beneficiaries</p>
+            </div>
+            <div class="about-stats__card">
+                <span class="about-stats__number" data-target="{{ stats.houses_beneficiaries }}">0</span>
+                <p class="about-stats__label">Housing Project Beneficiaries</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Profile Download -->
+<section class="about-profile">
+    <div class="container">
+        <h2 class="about-profile__heading">Download Company Profile</h2>
+        <div class="about-profile__grid">
+            <!-- Arabic Profile -->
+            <a href="{% url 'website:pdf_view_ar' %}" class="about-profile__card about-profile__card--ar">
+                <div class="about-profile__icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div class="about-profile__body">
+                    <h3 class="about-profile__title">Company Profile</h3>
+                    <p class="about-profile__sub">PDF • Arabic</p>
+                </div>
+                <div class="about-profile__arrow">
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+            </a>
+
+            <!-- English Profile -->
+            <a href="{% url 'website:pdf_view_en' %}" class="about-profile__card about-profile__card--en">
+                <div class="about-profile__icon">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div class="about-profile__body">
+                    <h3 class="about-profile__title">Company Profile</h3>
+                    <p class="about-profile__sub">PDF • English</p>
+                </div>
+                <div class="about-profile__arrow">
+                    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

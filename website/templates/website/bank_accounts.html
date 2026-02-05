@@ -1,0 +1,240 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/donation.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="donation-page">
+    <div class="container">
+        <!-- Back Link -->
+        <a href="{% url 'website:home' %}" class="donation-back-link">
+            ← العودة للرئيسية
+        </a>
+
+        <!-- Header -->
+        <div class="donation-header">
+            <div class="donation-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2"/>
+                    <line x1="2" y1="10" x2="22" y2="10" stroke-width="2"/>
+                </svg>
+            </div>
+            <h1 class="donation-page-title">الحسابات البنكية</h1>
+            <p class="donation-page-subtitle">يمكنك التبرع مباشرة من خلال التحويل إلى أحد الحسابات البنكية التالية</p>
+        </div>
+
+        <!-- Info Box -->
+        <div class="donation-info-box">
+            <h3 class="donation-info-title">معلومات مهمة</h3>
+            <ul class="donation-info-list">
+                <li>يمكنك النقر على أي رقم لنسخه مباشرة</li>
+                <li>جميع الحسابات تابعة لجمعية إعمار</li>
+                <li>تبرعاتكم معفاة من الضرائب وفقاً للأنظمة المعمول بها</li>
+            </ul>
+        </div>
+
+        <!-- Bank Accounts Grid -->
+        <div class="bank-accounts-grid">
+            <!-- Account 1: العام -->
+            <div class="bank-account-card">
+                <div class="bank-account-header blue">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2"/>
+                        <line x1="2" y1="10" x2="22" y2="10" stroke-width="2"/>
+                    </svg>
+                    العام
+                </div>
+                <div class="bank-account-body">
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الحساب</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('552608010227728', this)">
+                            <span>552608010227728</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الآيبان</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('SA3480000552608010227728', this)">
+                            <span>SA3480000552608010227728</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account 2: المشاريع -->
+            <div class="bank-account-card">
+                <div class="bank-account-header green">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2"/>
+                        <line x1="2" y1="10" x2="22" y2="10" stroke-width="2"/>
+                    </svg>
+                    المشاريع
+                </div>
+                <div class="bank-account-body">
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الحساب</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('552608010522227', this)">
+                            <span>552608010522227</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الآيبان</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('SA3980000552608010522227', this)">
+                            <span>SA3980000552608010522227</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account 3: الصدقة -->
+            <div class="bank-account-card">
+                <div class="bank-account-header purple">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2"/>
+                        <line x1="2" y1="10" x2="22" y2="10" stroke-width="2"/>
+                    </svg>
+                    الصدقة
+                </div>
+                <div class="bank-account-body">
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الحساب</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('552608010522201', this)">
+                            <span>552608010522201</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الآيبان</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('SA6280000552608010522201', this)">
+                            <span>SA6280000552608010522201</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account 4: الوقف -->
+            <div class="bank-account-card">
+                <div class="bank-account-header orange">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2"/>
+                        <line x1="2" y1="10" x2="22" y2="10" stroke-width="2"/>
+                    </svg>
+                    الوقف
+                </div>
+                <div class="bank-account-body">
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الحساب</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('552608010522219', this)">
+                            <span>552608010522219</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الآيبان</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('SA6180000552608010522219', this)">
+                            <span>SA6180000552608010522219</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Account 5: العام - حساب بديل -->
+            <div class="bank-account-card">
+                <div class="bank-account-header teal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="2" y="5" width="20" height="14" rx="2" stroke-width="2"/>
+                        <line x1="2" y1="10" x2="22" y2="10" stroke-width="2"/>
+                    </svg>
+                    العام - حساب بديل
+                </div>
+                <div class="bank-account-body">
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الحساب</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('68204093428000', this)">
+                            <span>68204093428000</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="bank-field">
+                        <label class="bank-field-label">رقم الآيبان</label>
+                        <div class="bank-field-value" onclick="copyToClipboard('SA2405000068204093428000', this)">
+                            <span>SA2405000068204093428000</span>
+                            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="9" y="9" width="13" height="13" rx="2" stroke-width="2"/>
+                                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Section -->
+        <div class="help-section">
+            <h2 class="help-section-title">هل تحتاج إلى مساعدة؟</h2>
+            <p class="help-section-desc">إذا واجهت أي مشكلة في التحويل أو كان لديك أي استفسار، يمكنك التواصل معنا</p>
+            <div class="help-buttons">
+                <a href="{% url 'website:contact' %}" class="help-btn help-btn-primary">اتصل بنا</a>
+                <a href="https://wa.me/966583073660" target="_blank" class="help-btn help-btn-secondary">راسلنا</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function copyToClipboard(text, element) {
+    navigator.clipboard.writeText(text).then(function() {
+        // Show success feedback
+        const originalBg = element.style.background;
+        element.style.background = '#22c55e';
+        element.style.borderColor = '#22c55e';
+        element.style.color = 'white';
+        
+        // Reset after 1 second
+        setTimeout(function() {
+            element.style.background = '';
+            element.style.borderColor = '';
+            element.style.color = '';
+        }, 1000);
+    }).catch(function(err) {
+        console.error('Failed to copy:', err);
+    });
+}
+</script>
+{% endblock %}
