@@ -53,6 +53,11 @@
                     <a href="{% url 'website:news' %}"
                        class="nav-link-modern {% if request.resolver_match.url_name == 'news' %}active{% endif %}">الأخبار</a>
 
+
+                           <!-- ✅ الرابط الجديد: صفحة الشركاء -->
+                           <a href="{% url 'website:partners' %}"
+                           class="nav-link-modern {% if request.resolver_match.url_name == 'partners' %}active{% endif %}">الشركاء</a>
+
                     <a href="{% url 'website:contact' %}"
                        class="nav-link-modern {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">اتصل بنا</a>
                 </nav>

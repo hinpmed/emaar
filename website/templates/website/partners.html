@@ -1,0 +1,568 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}الشركاء - جمعية إعمار{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Partners Page Styles */
+    .partners-page {
+        padding: 4rem 0 5rem;
+        background: linear-gradient(135deg, #f0f4f8 0%, #ffffff 100%);
+    }
+    
+    .partners-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    
+    .partners-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+    }
+    
+    .partners-subtitle {
+        font-size: 1.125rem;
+        color: var(--gray-600);
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+    
+    /* Section Divider */
+    .partners-section {
+        margin-bottom: 5rem;
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+    }
+    
+    .section-header::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+        margin: 1.5rem auto 0;
+        border-radius: 2px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+        color: var(--gray-600);
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    /* Corporate Partners Grid */
+    .corporate-partners-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .partner-logo-card {
+        background: white;
+        border-radius: 1.25rem;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 180px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 1px solid var(--gray-200);
+    }
+    
+    .partner-logo-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        border-color: var(--primary-color);
+    }
+    
+    .partner-logo-card img {
+        max-width: 100%;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        filter: grayscale(20%);
+        transition: filter 0.3s ease;
+    }
+    
+    .partner-logo-card:hover img {
+        filter: grayscale(0%);
+    }
+    
+    /* Influencer Partners Grid */
+    .influencer-partners-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 2rem;
+    }
+    
+    .influencer-card {
+        background: white;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 1px solid var(--gray-200);
+    }
+    
+    .influencer-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        border-color: var(--primary-color);
+    }
+    
+    .influencer-avatar {
+        width: 100%;
+        aspect-ratio: 1;
+        background: linear-gradient(135deg, #76b6e9 0%, #5a9dd4 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .influencer-avatar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(118, 182, 233, 0.9) 0%, rgba(90, 157, 212, 0.9) 100%);
+    }
+    
+    .influencer-initial {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: white;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .influencer-info {
+        padding: 1.5rem;
+        text-align: center;
+    }
+    
+    .influencer-name {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 0.25rem;
+    }
+    
+    .influencer-title {
+        font-size: 0.875rem;
+        color: var(--gray-600);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .corporate-partners-grid {
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .influencer-partners-grid {
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .partners-page {
+            padding: 2.5rem 0 3.5rem;
+        }
+        
+        .partners-header {
+            margin-bottom: 3rem;
+        }
+        
+        .partners-title {
+            font-size: 2rem;
+        }
+        
+        .partners-subtitle {
+            font-size: 1rem;
+        }
+        
+        .partners-section {
+            margin-bottom: 3.5rem;
+        }
+        
+        .section-header {
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+        }
+        
+        .section-description {
+            font-size: 0.9375rem;
+        }
+        
+        .corporate-partners-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+        
+        .partner-logo-card {
+            padding: 1.5rem;
+            min-height: 150px;
+        }
+        
+        .partner-logo-card img {
+            max-height: 80px;
+        }
+        
+        .influencer-partners-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+        
+        .influencer-initial {
+            font-size: 3rem;
+        }
+        
+        .influencer-info {
+            padding: 1.25rem;
+        }
+        
+        .influencer-name {
+            font-size: 1rem;
+        }
+        
+        .influencer-title {
+            font-size: 0.8125rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .partners-title {
+            font-size: 1.75rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+        }
+        
+        .corporate-partners-grid,
+        .influencer-partners-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    /* Dark Mode Support */
+    .dark .partners-page {
+        background: linear-gradient(135deg, #0c122e 0%, #1a2049 100%);
+    }
+    
+    .dark .partners-title,
+    .dark .section-title,
+    .dark .influencer-name {
+        color: white;
+    }
+    
+    .dark .partners-subtitle,
+    .dark .section-description,
+    .dark .influencer-title {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .dark .partner-logo-card,
+    .dark .influencer-card {
+        background: var(--dark-secondary);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .dark .partner-logo-card:hover,
+    .dark .influencer-card:hover {
+        border-color: var(--primary-color);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="partners-page">
+    <div class="container">
+        <!-- Page Header -->
+        <div class="partners-header">
+            <h1 class="partners-title">شركاؤنا في النجاح</h1>
+            <p class="partners-subtitle">
+                نفخر بشراكاتنا مع الجهات والمؤسسات والمشاهير الذين يساهمون معنا في خدمة المجتمع وتحقيق رؤيتنا
+            </p>
+        </div>
+
+        <!-- Section 1: Corporate Partners -->
+        <div class="partners-section">
+            <div class="section-header">
+                <h2 class="section-title">شركاء إعمار</h2>
+                <p class="section-description">
+                    الجهات والشركات والمؤسسات الشريكة لنا في مسيرة العطاء
+                </p>
+            </div>
+
+            <div class="corporate-partners-grid">
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/1.jpg' %}" alt="شريك 1" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/2.jpg' %}" alt="شريك 2" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/3.jpg' %}" alt="شريك 3" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/4.jpg' %}" alt="شريك 4" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/5.jpg' %}" alt="شريك 5" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/6.jpg' %}" alt="شريك 6" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/7.jpg' %}" alt="شريك 7" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/8.jpg' %}" alt="شريك 8" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/9.jpg' %}" alt="شريك 9" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/10.jpg' %}" alt="شريك 10" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/11.jpg' %}" alt="شريك 11" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/12.jpg' %}" alt="شريك 12" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/13.jpg' %}" alt="شريك 13" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/14.jpg' %}" alt="شريك 14" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/15.jpg' %}" alt="شريك 15" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/16.jpg' %}" alt="شريك 16" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/17.jpg' %}" alt="شريك 17" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/18.jpg' %}" alt="شريك 18" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/19.jpg' %}" alt="شريك 19" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/20.jpg' %}" alt="شريك 20" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/21.jpg' %}" alt="شريك 21" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/22.jpg' %}" alt="شريك 22" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/23.jpg' %}" alt="شريك 23" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/24.jpg' %}" alt="شريك 24" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/25.jpg' %}" alt="شريك 25" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/26.jpg' %}" alt="شريك 26" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/27.jpg' %}" alt="شريك 27" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/28.jpg' %}" alt="شريك 28" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/29.jpg' %}" alt="شريك 29" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/30.jpg' %}" alt="شريك 30" loading="lazy">
+                </div>
+                <div class="partner-logo-card">
+                    <img src="{% static 'images/31.jpg' %}" alt="شريك 31" loading="lazy">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Influencer Partners -->
+        <div class="partners-section">
+            <div class="section-header">
+                <h2 class="section-title">شركاء الإحسان</h2>
+                <p class="section-description">
+                    المشاهير والمؤثرون الذين يدعمون رسالتنا الإنسانية
+                </p>
+            </div>
+
+            <div class="influencer-partners-grid">
+                <!-- 1. رجاء عبدالله -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">ر</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">رجاء عبدالله</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+
+                <!-- 2. رسمية السناني -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">ر</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">رسمية السناني</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+
+                <!-- 3. عليا الشريف -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">ع</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">عليا الشريف</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+
+                <!-- 4. وعد النافع -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">و</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">وعد النافع</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+
+                <!-- 5. منى الشيخ -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">م</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">منى الشيخ</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+
+                <!-- 6. خالد الشيخ -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">خ</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">خالد الشيخ</h3>
+                        <p class="influencer-title">مؤثر ومشهور</p>
+                    </div>
+                </div>
+
+                <!-- 7. مسور الشريف -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">م</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">مسور الشريف</h3>
+                        <p class="influencer-title">مستر توفير</p>
+                    </div>
+                </div>
+
+                <!-- 8. أماني السبع -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">أ</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">أماني السبع</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+
+                <!-- 9. رغدة حجر -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">ر</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">رغدة حجر</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+
+                <!-- 10. غدير الحربي -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">غ</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">غدير الحربي</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+
+                <!-- 11. ثريا الحربي -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">ث</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">ثريا الحربي</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+
+                <!-- 12. أحلام الصاعدي -->
+                <div class="influencer-card">
+                    <div class="influencer-avatar">
+                        <div class="influencer-initial">أ</div>
+                    </div>
+                    <div class="influencer-info">
+                        <h3 class="influencer-name">أحلام الصاعدي</h3>
+                        <p class="influencer-title">مؤثرة ومشهورة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

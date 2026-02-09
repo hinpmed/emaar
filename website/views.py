@@ -739,3 +739,40 @@ def governance_board_members(request):
         'remaining_years': 'سنتين',
     }
     return render(request, 'website/governance_board_members.html', context)
+
+
+
+
+    # ═══════════════════════════════════════════════════════════
+# صفحة الشركاء - Partners Page
+# أضف هذه الدالة في نهاية ملف views.py الموجود
+# ═══════════════════════════════════════════════════════════
+
+def partners(request):
+    """صفحة الشركاء - شركاء إعمار وشركاء الإحسان"""
+    
+    # شركاء إعمار (الشركات والمؤسسات) - صور من 1.jpg إلى 31.jpg
+    partner_logos = list(range(1, 32))  # [1, 2, 3, ..., 31]
+    
+    # شركاء الإحسان (المشاهير والمؤثرين)
+    influencers = [
+        {'name': 'رجاء عبدالله', 'title': 'مؤثرة ومشهورة', 'initial': 'ر'},
+        {'name': 'رسمية السناني', 'title': 'مؤثرة ومشهورة', 'initial': 'ر'},
+        {'name': 'عليا الشريف', 'title': 'مؤثرة ومشهورة', 'initial': 'ع'},
+        {'name': 'وعد النافع', 'title': 'مؤثرة ومشهورة', 'initial': 'و'},
+        {'name': 'منى الشيخ', 'title': 'مؤثرة ومشهورة', 'initial': 'م'},
+        {'name': 'خالد الشيخ', 'title': 'مؤثر ومشهور', 'initial': 'خ'},
+        {'name': 'مسور الشريف (مستر توفير)', 'title': 'مؤثر ومشهور', 'initial': 'م'},
+        {'name': 'أماني السبع', 'title': 'مؤثرة ومشهورة', 'initial': 'أ'},
+        {'name': 'رغدة حجر', 'title': 'مؤثرة ومشهورة', 'initial': 'ر'},
+        {'name': 'غدير الحربي', 'title': 'مؤثرة ومشهورة', 'initial': 'غ'},
+        {'name': 'ثريا الحربي', 'title': 'مؤثرة ومشهورة', 'initial': 'ث'},
+        {'name': 'أحلام الصاعدي', 'title': 'مؤثرة ومشهورة', 'initial': 'أ'},
+    ]
+    
+    context = {
+        'partner_logos': partner_logos,
+        'influencers': influencers,
+    }
+    
+    return render(request, 'website/partners.html', context)
