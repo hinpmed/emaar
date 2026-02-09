@@ -116,20 +116,7 @@ SERVICES = [
     },
 
     # ── الحوكمة ──
-    {
-        'id': 'board-satisfaction',
-        'title': 'استطلاع رضاء أعضاء مجلس الإدارة',
-        'description': 'قياس مستوى رضاء أعضاء مجلس الإدارة',
-        'icon': '📊',
-        'category': 'حوكمة',
-    },
-    {
-        'id': 'general-assembly-satisfaction',
-        'title': 'استطلاع رضاء الجمعية العمومية',
-        'description': 'قياس مستوى رضاء أعضاء الجمعية العمومية',
-        'icon': '📋',
-        'category': 'حوكمة',
-    },
+
     {
         'id': 'stakeholder-survey-results',
         'title': 'نتائج استطلاع أصحاب العلاقة',
@@ -290,38 +277,27 @@ def staff_login(request):
 # These are inserted via {{ item.icon_path|safe }} in the template.
 
 SECTIONS = [
-    # ── row 1 (screenshot order: right → left in RTL) ──
+    # ── row 1 ──
     {
         'title': 'درجة تقييم الحوكمة',
         'description': 'اطلع على نتائج تقييم الحوكمة ومعايير الامتثال',
         'url_name': 'website:governance_rating',
-        'icon_bg': '#3b82f6',          # blue
-        'icon_path': (
-            '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'
-        ),
+        'icon_bg': '#3b82f6',
+        'icon_path': '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
     },
     {
         'title': 'اللوائح والسياسات',
         'description': 'جميع اللوائح والسياسات المعتمدة في الجمعية',
         'url_name': 'website:governance_policies',
-        'icon_bg': '#a855f7',          # purple
-        'icon_path': (
-            '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>'
-            '<polyline points="14 2 14 8 20 8"/>'
-            '<line x1="16" y1="13" x2="8" y2="13"/>'
-            '<line x1="16" y1="17" x2="8" y2="17"/>'
-            '<polyline points="10 9 9 9 8 9"/>'
-        ),
+        'icon_bg': '#a855f7',
+        'icon_path': '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
     },
     {
         'title': 'القوائم المالية',
         'description': 'الميزانيات المالية للأعوام السابقة',
         'url_name': 'website:governance_financial',
-        'icon_bg': '#22c55e',          # green
-        'icon_path': (
-            '<line x1="12" y1="1" x2="12" y2="23"/>'
-            '<path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>'
-        ),
+        'icon_bg': '#22c55e',
+        'icon_path': '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>',
     },
 
     # ── row 2 ──
@@ -329,33 +305,22 @@ SECTIONS = [
         'title': 'الاجتماعات',
         'description': 'محاضر اجتماعات الجمعية العمومية',
         'url_name': 'website:governance_meetings',
-        'icon_bg': '#f97316',          # orange
-        'icon_path': (
-            '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>'
-            '<circle cx="9" cy="7" r="4"/>'
-            '<path d="M23 21v-2a4 4 0 00-3-3.87"/>'
-            '<path d="M16 3.13a4 4 0 010 7.75"/>'
-        ),
+        'icon_bg': '#f97316',
+        'icon_path': '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
     },
     {
         'title': 'اللجان الدائمة',
         'description': 'معلومات عن اللجان الدائمة في الجمعية',
         'url_name': 'website:governance_committees',
-        'icon_bg': '#7c3aed',          # violet
-        'icon_path': (
-            '<path d="M9 11l3 3L22 4"/>'
-            '<path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>'
-        ),
+        'icon_bg': '#7c3aed',
+        'icon_path': '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
     },
     {
         'title': 'أملاك واستثمارات الجمعية',
         'description': 'معلومات عن أملاك واستثمارات الجمعية',
         'url_name': 'website:governance_assets',
-        'icon_bg': '#10b981',          # emerald / teal
-        'icon_path': (
-            '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>'
-            '<polyline points="17 6 23 6 23 12"/>'
-        ),
+        'icon_bg': '#10b981',
+        'icon_path': '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>',
     },
 
     # ── row 3 ──
@@ -363,57 +328,48 @@ SECTIONS = [
         'title': 'التقرير السنوي',
         'description': 'التقارير السنوية للجمعية',
         'url_name': 'website:governance_annual',
-        'icon_bg': '#6366f1',          # indigo
-        'icon_path': (
-            '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>'
-            '<polyline points="14 2 14 8 20 8"/>'
-            '<line x1="8" y1="15" x2="8" y2="21"/>'
-            '<line x1="12" y1="13" x2="12" y2="21"/>'
-            '<line x1="16" y1="11" x2="16" y2="21"/>'
-        ),
+        'icon_bg': '#6366f1',
+        'icon_path': '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="15" x2="8" y2="21"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="16" y1="11" x2="16" y2="21"/>',
     },
     {
         'title': 'الخطة الاستراتيجية',
         'description': 'الخطة الاستراتيجية للجمعية',
         'url_name': 'website:governance_strategic',
-        'icon_bg': '#ec4899',          # pink
-        'icon_path': (
-            '<circle cx="12" cy="12" r="10"/>'
-            '<circle cx="12" cy="12" r="3"/>'
-            '<line x1="12" y1="2" x2="12" y2="5"/>'
-            '<line x1="12" y1="19" x2="12" y2="22"/>'
-            '<line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/>'
-            '<line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/>'
-            '<line x1="2" y1="12" x2="5" y2="12"/>'
-            '<line x1="19" y1="12" x2="22" y2="12"/>'
-            '<line x1="4.93" y1="19.07" x2="7.05" y2="16.95"/>'
-            '<line x1="16.95" y1="7.05" x2="19.07" y2="4.93"/>'
-        ),
+        'icon_bg': '#ec4899',
+        'icon_path': '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>',
     },
     {
-        'title': 'الخطة التشغيلية',
-        'description': 'الخطة التشغيلية السنوية',
-        'url_name': 'website:governance_operational',
-        'icon_bg': '#14b8a6',          # teal
-        'icon_path': (
-            '<circle cx="12" cy="12" r="3"/>'
-            '<path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>'
-        ),
+        'title': 'الهيكل التنظيمي',
+        'description': 'الهيكل التنظيمي للجمعية',
+        'url_name': 'website:governance_structure',
+        'icon_bg': '#14b8a6',
+        'icon_path': '<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>',
+    },
+
+    # ── row 4 ──
+    {
+        'title': 'أعضاء الجمعية العمومية',
+        'description': 'قائمة أعضاء الجمعية العمومية',
+        'url_name': 'website:governance_general_members',
+        'icon_bg': '#06b6d4',
+        'icon_path': '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    },
+    {
+        'title': 'أعضاء مجلس الإدارة',
+        'description': 'قائمة أعضاء مجلس الإدارة الحالي',
+        'url_name': 'website:governance_board_members',
+        'icon_bg': '#f59e0b',
+        'icon_path': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="11" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/>',
     },
     {
         'title': 'التقارير',
         'description': 'جميع التقارير الدورية والسنوية',
         'url_name': 'website:governance_reports',
-        'icon_bg': '#8b5cf6',          # violet-500
-        'icon_path': (
-            '<path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/>'
-            '<polyline points="13 2 13 9 20 9"/>'
-            '<line x1="16" y1="13" x2="8" y2="13"/>'
-            '<line x1="16" y1="17" x2="8" y2="17"/>'
-            '<polyline points="10 9 9 9 8 9"/>'
-        ),
+        'icon_bg': '#8b5cf6',
+        'icon_path': '<path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
     },
 ]
+
 
 
 # ── main listing view ──────────────────────────────────────
@@ -603,3 +559,183 @@ def news_detail(request, slug):
     return render(request, 'website/news_detail.html', {
         'news_item': news_item,
     })
+
+
+
+# في نهاية ملف views.py الحالي، استبدل قسم SECTIONS وأضف الدوال الجديدة
+
+SECTIONS = [
+    # ── row 1 ──
+    {
+        'title': 'درجة تقييم الحوكمة',
+        'description': 'اطلع على نتائج تقييم الحوكمة ومعايير الامتثال',
+        'url_name': 'website:governance_rating',
+        'icon_bg': '#3b82f6',
+        'icon_path': '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+    },
+    {
+        'title': 'اللوائح والسياسات',
+        'description': 'جميع اللوائح والسياسات المعتمدة في الجمعية',
+        'url_name': 'website:governance_policies',
+        'icon_bg': '#a855f7',
+        'icon_path': '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+    },
+    {
+        'title': 'القوائم المالية',
+        'description': 'الميزانيات المالية للأعوام السابقة',
+        'url_name': 'website:governance_financial',
+        'icon_bg': '#22c55e',
+        'icon_path': '<line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>',
+    },
+
+    # ── row 2 ──
+    {
+        'title': 'الاجتماعات',
+        'description': 'محاضر اجتماعات الجمعية العمومية',
+        'url_name': 'website:governance_meetings',
+        'icon_bg': '#f97316',
+        'icon_path': '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>',
+    },
+    {
+        'title': 'اللجان الدائمة',
+        'description': 'معلومات عن اللجان الدائمة في الجمعية',
+        'url_name': 'website:governance_committees',
+        'icon_bg': '#7c3aed',
+        'icon_path': '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>',
+    },
+    {
+        'title': 'أملاك واستثمارات الجمعية',
+        'description': 'معلومات عن أملاك واستثمارات الجمعية',
+        'url_name': 'website:governance_assets',
+        'icon_bg': '#10b981',
+        'icon_path': '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>',
+    },
+
+    # ── row 3 ──
+    {
+        'title': 'التقرير السنوي',
+        'description': 'التقارير السنوية للجمعية',
+        'url_name': 'website:governance_annual',
+        'icon_bg': '#6366f1',
+        'icon_path': '<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="15" x2="8" y2="21"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="16" y1="11" x2="16" y2="21"/>',
+    },
+    {
+        'title': 'الخطة الاستراتيجية',
+        'description': 'الخطة الاستراتيجية للجمعية',
+        'url_name': 'website:governance_strategic',
+        'icon_bg': '#ec4899',
+        'icon_path': '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>',
+    },
+    {
+        'title': 'الهيكل التنظيمي',
+        'description': 'الهيكل التنظيمي للجمعية',
+        'url_name': 'website:governance_structure',
+        'icon_bg': '#14b8a6',
+        'icon_path': '<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>',
+    },
+
+    # ── row 4 ──
+    {
+        'title': 'أعضاء الجمعية العمومية',
+        'description': 'قائمة أعضاء الجمعية العمومية',
+        'url_name': 'website:governance_general_members',
+        'icon_bg': '#06b6d4',
+        'icon_path': '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    },
+    {
+        'title': 'أعضاء مجلس الإدارة',
+        'description': 'قائمة أعضاء مجلس الإدارة الحالي',
+        'url_name': 'website:governance_board_members',
+        'icon_bg': '#f59e0b',
+        'icon_path': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="11" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/>',
+    },
+    {
+        'title': 'التقارير',
+        'description': 'جميع التقارير الدورية والسنوية',
+        'url_name': 'website:governance_reports',
+        'icon_bg': '#8b5cf6',
+        'icon_path': '<path d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z"/><polyline points="13 2 13 9 20 9"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+    },
+]
+
+
+# الدوال الموجودة (لا تغيير)
+def governance(request):
+    """Render the governance cards grid."""
+    return render(request, 'website/governance.html', {'sections': SECTIONS})
+
+def governance_rating(request):
+    return render(request, 'website/governance_rating.html')
+
+def governance_policies(request):
+    return render(request, 'website/governance_policies.html')
+
+def governance_financial(request):
+    return render(request, 'website/governance_financial.html')
+
+def governance_meetings(request):
+    return render(request, 'website/governance_meetings.html')
+
+def governance_committees(request):
+    return render(request, 'website/governance_committees.html')
+
+def governance_assets(request):
+    return render(request, 'website/governance_assets.html')
+
+def governance_annual(request):
+    return render(request, 'website/annual_reports.html', {'section_title': 'التقرير السنوي'})
+
+def governance_reports(request):
+    return render(request, 'website/reports.html', {'section_title': 'التقارير'})
+
+
+# ═══════════════════════════════════════════════════════════
+# الدوال الجديدة - أضفها في نهاية ملف views.py
+# ═══════════════════════════════════════════════════════════
+
+def governance_strategic(request):
+    """الخطة الاستراتيجية - PDF viewer page"""
+    return render(request, 'website/governance_strategic.html')
+
+
+def governance_structure(request):
+    """الهيكل التنظيمي - صورة الهيكل التنظيمي"""
+    return render(request, 'website/governance_structure.html')
+
+
+def governance_general_members(request):
+    """أعضاء الجمعية العمومية"""
+    members = [
+        'د. كمال محمد عثمان',
+        'م. عبدالله فهد الردادي',
+        'أ. عمر هاشم برزنجي',
+        'أ. يوسف أيمن عبدالغني',
+        'أ. أحمد بكر زيدان',
+        'أ. عمر عبد الخالق محبوب',
+        'م. محمد عبدالباسط محمود',
+        'م. أحمد كمال عثمان',
+        'م. منير عبدالحميد بخش',
+        'أ. عبدالله صلاح كردي',
+        'م. عامر عبد الكريم بخاري',
+        'م. زياد احمد حامد',
+        'د. خلود شاكر كشك',
+    ]
+    return render(request, 'website/governance_general_members.html', {'members': members})
+
+
+def governance_board_members(request):
+    """أعضاء مجلس الإدارة"""
+    board_members = [
+        {'name': 'د. كمال محمد عثمان', 'position': 'رئيس مجلس الإدارة'},
+        {'name': 'م. عبدالله فهد الردادي', 'position': 'نائب رئيس مجلس الإدارة'},
+        {'name': 'أ. عمر هاشم برزنجي', 'position': 'عضو مجلس الإدارة'},
+        {'name': 'أ. يوسف أيمن عبدالغني', 'position': 'عضو مجلس الإدارة'},
+        {'name': 'أ. أحمد بكر زيدان', 'position': 'عضو مجلس الإدارة'},
+    ]
+    
+    context = {
+        'board_members': board_members,
+        'term_number': 2,
+        'remaining_years': 'سنتين',
+    }
+    return render(request, 'website/governance_board_members.html', context)

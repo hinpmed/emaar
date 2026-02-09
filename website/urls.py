@@ -8,6 +8,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('service/<str:service_id>/', views.service_detail, name='service_detail'),
     path('campaigns/', views.campaigns, name='campaigns'),
+    
+    # ══════════════ GOVERNANCE SECTION ══════════════
     path('governance/', views.governance, name='governance'),
     path('governance/rating/', views.governance_rating, name='governance_rating'),
     path('governance/policies/', views.governance_policies, name='governance_policies'),
@@ -17,10 +19,18 @@ urlpatterns = [
     path('governance/assets/', views.governance_assets, name='governance_assets'),
     path('governance/annual/', views.governance_annual, name='governance_annual'),
     path('governance/strategic/', views.governance_strategic, name='governance_strategic'),
-    path('governance/operational/', views.governance_operational, name='governance_operational'),
+    # ✅ حذف الخطة التشغيلية (تم الحذف)
+    # path('governance/operational/', views.governance_operational, name='governance_operational'),
     path('governance/reports/', views.governance_reports, name='governance_reports'),
+    
+    # ══════════════ NEW GOVERNANCE PAGES ══════════════
+    path('governance/structure/', views.governance_structure, name='governance_structure'),  # الهيكل التنظيمي
+    path('governance/general-members/', views.governance_general_members, name='governance_general_members'),  # أعضاء الجمعية العمومية
+    path('governance/board-members/', views.governance_board_members, name='governance_board_members'),  # أعضاء مجلس الإدارة
+    # ══════════════════════════════════════════════════
+    
     path('news/', views.news, name='news'),
-    path('news/<slug:slug>/',            views.news_detail,            name='news_detail'),   # ← NEW
+    path('news/<slug:slug>/', views.news_detail, name='news_detail'),
     path('contact/', views.contact, name='contact'),
     path('zakat-calculator/', views.zakat_calculator, name='zakat_calculator'),
     path('bank-accounts/', views.bank_accounts, name='bank_accounts'),
@@ -31,11 +41,6 @@ urlpatterns = [
     path('profile-ar/', views.pdf_view_ar, name='pdf_view_ar'),
     path('profile-en/', views.pdf_view_en, name='pdf_view_en'),
 
-    path('services/',                views.services,       name='services'),
-    path('service/<str:service_id>/', views.service_detail, name='service_detail'),
-
-    path('volunteers/',              views.volunteers,            name='volunteers'),
+    path('services/', views.services, name='services'),
+    path('volunteers/', views.volunteers, name='volunteers'),
 ]
-
-
-

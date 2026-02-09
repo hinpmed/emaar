@@ -5,6 +5,7 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/about.css' %}">
+<link rel="stylesheet" href="{% static 'css/strategic-objectives.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -53,23 +54,6 @@
 <section class="about-vm">
     <div class="container">
         <div class="about-vm__grid">
-            <!-- Mission -->
-            <div class="about-vm__card">
-                <div class="about-vm__icon-wrap">
-                    <div class="about-vm__icon">
-                        <!-- target / mission icon -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <circle cx="12" cy="12" r="3"/>
-                        </svg>
-                    </div>
-                </div>
-                <h3 class="about-vm__title">الرسالة</h3>
-                <p class="about-vm__desc">
-                    تحقيق تنمية حضرية مستدامة من خلال خدمات تنموية وإسكانية في بيئة
-                    مؤسسية متميزة وشراكات مجتمعية فاعلة
-                </p>
-            </div>
             <!-- Vision -->
             <div class="about-vm__card">
                 <div class="about-vm__icon-wrap">
@@ -83,7 +67,23 @@
                 </div>
                 <h3 class="about-vm__title">الرؤية</h3>
                 <p class="about-vm__desc">
-                    نموذج ريادي في التنمية الحضرية بمنطقة المدينة المنورة
+                    إعمار وتنمية المجتمع بحلول هندسية مبتكرة ومستدامة
+                </p>
+            </div>
+            <!-- Mission -->
+            <div class="about-vm__card">
+                <div class="about-vm__icon-wrap">
+                    <div class="about-vm__icon">
+                        <!-- target / mission icon -->
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                </div>
+                <h3 class="about-vm__title">الرسالة</h3>
+                <p class="about-vm__desc">
+                    بناء مجتمع مستدام بحلول هندسية مبتكرة تعزز من جودة الحياة
                 </p>
             </div>
         </div>
@@ -95,18 +95,37 @@
     <div class="container">
         <h2 class="about-values__heading">القيم</h2>
         <div class="about-values__grid">
-            <!-- المبادرة -->
+            <!-- الأثر -->
             <div class="about-values__card">
                 <div class="about-values__icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                        <line x1="3" y1="9" x2="21" y2="9"/>
-                        <line x1="9" y1="21" x2="9" y2="9"/>
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                        <polyline points="17 6 23 6 23 12"/>
                     </svg>
                 </div>
-                <h4 class="about-values__label">المبادرة</h4>
+                <h4 class="about-values__label">الأثر</h4>
             </div>
-            <!-- المصداقية -->
+            <!-- الطموح -->
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <h4 class="about-values__label">الطموح</h4>
+            </div>
+            <!-- الإبتكار -->
+            <div class="about-values__card">
+                <div class="about-values__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+                    </svg>
+                </div>
+                <h4 class="about-values__label">الإبتكار</h4>
+            </div>
+            <!-- الاستدامة -->
             <div class="about-values__card">
                 <div class="about-values__icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -116,27 +135,7 @@
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                     </svg>
                 </div>
-                <h4 class="about-values__label">المصداقية</h4>
-            </div>
-            <!-- الإبداع -->
-            <div class="about-values__card">
-                <div class="about-values__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-                        <polyline points="17 6 23 6 23 12"/>
-                    </svg>
-                </div>
-                <h4 class="about-values__label">الإبداع</h4>
-            </div>
-            <!-- الإتقان -->
-            <div class="about-values__card">
-                <div class="about-values__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="8" r="6"/>
-                        <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
-                    </svg>
-                </div>
-                <h4 class="about-values__label">الإتقان</h4>
+                <h4 class="about-values__label">الاستدامة</h4>
             </div>
         </div>
     </div>
@@ -155,6 +154,100 @@
                 <p class="about-goals__text">العمل على رفع كفاءة مطوري خدمات إنشاء المباني وصيانتها وإدارة مرافقها</p>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ===================== STRATEGIC OBJECTIVES ===================== -->
+<section class="about-strategic">
+    <div class="container">
+        <h2 class="about-opgoals__heading">الأهداف الاستراتيجية</h2>
+
+
+
+        <!-- Strategic Goals Tab -->
+        <div class="about-strategic__content active" id="strategic-tab">
+            <div class="about-strategic__table">
+                <div class="about-strategic__table-header">
+                    <div class="about-strategic__col about-strategic__col--num">م</div>
+                    <div class="about-strategic__col about-strategic__col--goal">الهدف</div>
+                    <div class="about-strategic__col about-strategic__col--desc">شرح الهدف</div>
+                </div>
+
+                <div class="about-strategic__table-body">
+                    <!-- Goal 1 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">1</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">تطوير وتنفيذ مشاريع قائمة وابتكارية تلبي احتياجات المستفيدين</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">تطوير وتحسين المشاريع القائمة وتنفيذ مشاريع مبتكرة تلبي احتياجات المستفيدين بكفاءة عالية، بما يحقق أقصى استفادة ممكنة لهم ويساهم في تحقيق أهداف الجمعية.</div>
+                    </div>
+
+                    <!-- Goal 2 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">2</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">بناء بيئة تطوع إحترافية</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">بناء بيئة تطوع جاذبة واحترافية من خلال توفير التدريب اللازم، وتطوير آليات عمل فعالة، وتوفير بيئة داعمة محفزة، لزيادة كفاءة المتطوعين ورفع مستوى أدائهم.</div>
+                    </div>
+
+                    <!-- Goal 3 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">3</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">زيادة اعداد الداعمين والاهتمام بهم</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">زيادة عدد الداعمين للجمعية من خلال حملات توعوية وتسويقية فعالة، وتعزيز التواصل معهم لبناء علاقات قوية والمحافظة عليهم وتحقيق ولدعمهم لتوفير دعم مستدام للجمعية.</div>
+                    </div>
+
+                    <!-- Goal 4 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">4</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">إبراز أثر الجمعية</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">تعزيز حضور الجمعية وفعاليتها وأثرها الإيجابي على المستفيدين والمجتمع، ورفع مستوى الوعي بأهدافها وإنجازاتها.</div>
+                    </div>
+
+                    <!-- Goal 5 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">5</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">بناء علامة إجتماعية تنموية</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">بناء سمعة قوية للجمعية كجهة رائدة في مجال الإسكان، وتعزيز حضورها في المجتمع، وزيادة الوعي بأهدافها وبرامجها</div>
+                    </div>
+
+                    <!-- Goal 6 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">6</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">اعداد أدلة ولوائح وأنمتها</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">إعداد أدلة ولوائح إجرائية شاملة ومتطورة، وتطبيق أنظمة آمنة لتحسين كفاءة العمليات وسرعة إنجاز المهام، وتقليل الأخطاء البشرية، وضمان التوافق مع المعايير المهنية.</div>
+                    </div>
+
+                    <!-- Goal 7 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">7</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">تطوير قدرات ومهارات فريق العمل</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">تطوير قدرات ومهارات فريق العمل من خلال برامج تدريبية متخصصة، وبناء فرق عمل فعّالة، ورفع مستوى أداء الأفراد، بما يسهم في تحقيق أهداف الجمعية بكفاءة عالية.</div>
+                    </div>
+
+                    <!-- Goal 8 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">8</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">تنويع مصادر الإيرادات وزيادتها</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">تنويع مصادر الإيرادات وزيادتها من خلال استكشاف فرص جديدة لجمع الأموال،لتحقيق الدخل المالي الكافي لتغطية خدمات وأنشطة الجمعية</div>
+                    </div>
+
+                    <!-- Goal 9 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">9</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">الحصول على فرص اسناد حكومي</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">الحصول على فرض تمويل حكومي عبر التقدم للبرامج والمشاريع الحكومية ذات العلاقة، وتعزيز العلاقات مع الجهات الحكومية المعنية لزيادة فرص الحصول على الدعم.</div>
+                    </div>
+
+                    <!-- Goal 10 -->
+                    <div class="about-strategic__row">
+                        <div class="about-strategic__cell about-strategic__cell--num">10</div>
+                        <div class="about-strategic__cell about-strategic__cell--goal">بناء مشاريع استثمارية متنوعة وقوية</div>
+                        <div class="about-strategic__cell about-strategic__cell--desc">العمل على بناء مصدر دعم مستدام خاص بالجمعية وذلك بإنشاء مشاريع استثمارية متنوعة وقوية تحقق للجمعية تدفق عالي من العوائد المالية لتسهيل تنفيذ خدماتها ومشاريعها</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </section>
 
@@ -224,11 +317,10 @@
 </section>
 
 <!-- ===================== STATS BANNER ===================== -->
-<!-- ===================== STATS BANNER ===================== -->
 <section class="about-stats">
     <div class="container">
         <div class="about-stats__years">
-            <span class="about-stats__years-num">٤</span>
+            <span class="about-stats__years-num">٥</span>
             <p class="about-stats__years-label">سنوات من العطاء</p>
         </div>
         <h2 class="about-stats__heading">الجمعية في أرقام واحصائية</h2>
@@ -264,7 +356,7 @@
                 <div class="about-profile__icon">
                     <!-- PDF icon -->
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
                         <polyline points="14 2 14 8 20 8"/>
                         <line x1="16" y1="13" x2="8" y2="13"/>
                         <line x1="16" y1="17" x2="8" y2="17"/>
@@ -287,7 +379,7 @@
             <a href="{% url 'website:pdf_view_en' %}" target="_blank" class="about-profile__card about-profile__card--en">
                 <div class="about-profile__icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
                         <polyline points="14 2 14 8 20 8"/>
                         <line x1="16" y1="13" x2="8" y2="13"/>
                         <line x1="16" y1="17" x2="8" y2="17"/>

@@ -1,19 +1,18 @@
 /* ================================================
    about.css  –  من نحن  (About page)
-   All colours / radii / spacing pulled from the
-   uploaded screenshots to stay pixel-accurate.
+   Updated with Strategic Objectives section
    ================================================ */
 
 /* ── shared tokens ── */
 :root {
-    --clr-primary:      #5ba8c8;   /* sky-blue used on icons & links */
-    --clr-primary-bg:   #eef7fb;   /* very light blue — icon box bg   */
-    --clr-primary-dark: #3a8aad;   /* hover shade                    */
-    --clr-navy:         #1a2744;   /* stats banner dark bg           */
-    --clr-navy-card:    #252f4a;   /* stats card bg (slightly lighter)*/
+    --clr-primary:      #5ba8c8;
+    --clr-primary-bg:   #eef7fb;
+    --clr-primary-dark: #3a8aad;
+    --clr-navy:         #1a2744;
+    --clr-navy-card:    #252f4a;
     --clr-text:         #333;
     --clr-text-light:   #6b7280;
-    --clr-card-bg:      #f4f8fa;   /* very pale grey card            */
+    --clr-card-bg:      #f4f8fa;
     --clr-white:        #fff;
     --radius-card:      16px;
     --radius-icon:      12px;
@@ -25,7 +24,7 @@
    ================================================ */
 .about-hero {
     position: relative;
-    height: 480px;                  /* match screenshot proportion     */
+    height: 480px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -90,17 +89,6 @@
     color: var(--clr-text-light);
     max-width: 780px;
     margin: 0 auto 16px;
-}
-.about-intro__link {
-    color: var(--clr-primary);
-    font-size: 1rem;
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1px solid transparent;
-    transition: border-color .25s;
-}
-.about-intro__link:hover {
-    border-color: var(--clr-primary);
 }
 
 /* ================================================
@@ -185,7 +173,7 @@
 }
 
 /* ================================================
-   VALUES  (القيم)
+   VALUES
    ================================================ */
 .about-values {
     padding: 56px 0;
@@ -238,7 +226,7 @@
 }
 
 /* ================================================
-   ASSOCIATION GOALS  (أهداف الجمعية)
+   ASSOCIATION GOALS
    ================================================ */
 .about-goals {
     padding: 56px 0;
@@ -281,7 +269,135 @@
 }
 
 /* ================================================
-   OPERATIONAL GOALS  (الأهداف التشغيلية)
+   STRATEGIC OBJECTIVES SECTION
+   ================================================ */
+.about-strategic {
+    padding: 56px 0 72px;
+    background: var(--clr-white);
+}
+
+/* Header with Tabs */
+.about-strategic__header {
+    margin-bottom: 36px;
+}
+
+.about-strategic__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.about-strategic__tab {
+    padding: 0.875rem 2rem;
+    background: var(--clr-card-bg);
+    color: var(--clr-text-light);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.about-strategic__tab:hover {
+    background: var(--clr-primary-bg);
+    color: var(--clr-primary);
+}
+
+.about-strategic__tab.active {
+    background: var(--clr-primary);
+    color: white;
+}
+
+/* Content Areas */
+.about-strategic__content {
+    display: none;
+}
+
+.about-strategic__content.active {
+    display: block;
+}
+
+.about-strategic__empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--clr-text-light);
+    font-size: 1.125rem;
+}
+
+/* Table Styling */
+.about-strategic__table {
+    background: var(--clr-card-bg);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.about-strategic__table-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 2fr;
+    gap: 1.5rem;
+    background: var(--clr-primary);
+    color: white;
+    padding: 1.5rem 2rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.about-strategic__table-body {
+    background: white;
+}
+
+.about-strategic__row {
+    display: grid;
+    grid-template-columns: 80px 1fr 2fr;
+    gap: 1.5rem;
+    padding: 1.75rem 2rem;
+    border-bottom: 1px solid var(--clr-card-bg);
+    transition: background 0.2s ease;
+}
+
+.about-strategic__row:hover {
+    background: var(--clr-card-bg);
+}
+
+.about-strategic__row:last-child {
+    border-bottom: none;
+}
+
+/* Columns */
+.about-strategic__col,
+.about-strategic__cell {
+    display: flex;
+    align-items: center;
+}
+
+.about-strategic__col--num,
+.about-strategic__cell--num {
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--clr-primary);
+}
+
+.about-strategic__col--goal,
+.about-strategic__cell--goal {
+    font-weight: 600;
+    color: var(--clr-text);
+    line-height: 1.6;
+}
+
+.about-strategic__col--desc,
+.about-strategic__cell--desc {
+    color: var(--clr-text-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* ================================================
+   OPERATIONAL GOALS
    ================================================ */
 .about-opgoals {
     padding: 56px 0 72px;
@@ -311,9 +427,8 @@
     transform: translateY(-4px);
     box-shadow: 0 8px 28px rgba(0,0,0,.1);
 }
-/* 5th card centred under the row of 4 */
 .about-opgoals__card--center {
-    grid-column: 2 / 4;           /* spans middle two columns       */
+    grid-column: 2 / 4;
     max-width: 360px;
     margin: 0 auto;
 }
@@ -341,7 +456,7 @@
 }
 
 /* ================================================
-   STATS BANNER  (الجمعية في أرقام)
+   STATS BANNER
    ================================================ */
 .about-stats {
     background: var(--clr-navy);
@@ -355,7 +470,6 @@
     padding: 0 24px;
 }
 
-/* Years highlight */
 .about-stats__years {
     margin-bottom: 44px;
 }
@@ -372,7 +486,6 @@
     margin-top: 6px;
 }
 
-/* Sub heading */
 .about-stats__heading {
     font-size: 1.4rem;
     font-weight: 600;
@@ -380,7 +493,6 @@
     margin-bottom: 32px;
 }
 
-/* 4 stat cards */
 .about-stats__grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -401,70 +513,6 @@
     font-size: .88rem;
     line-height: 1.55;
     opacity: .7;
-}
-
-/* ================================================
-   RESPONSIVE  –  tablet
-   ================================================ */
-@media (max-width: 900px) {
-    .about-hero        { height: 380px; }
-    .about-vm__grid    { grid-template-columns: 1fr; }
-    .about-values__grid,
-    .about-opgoals__grid,
-    .about-stats__grid { grid-template-columns: repeat(2, 1fr); }
-    .about-opgoals__card--center { grid-column: 1 / -1; }
-}
-
-/* ================================================
-   RESPONSIVE  –  mobile
-   ================================================ */
-@media (max-width: 580px) {
-    .about-hero        { height: 300px; }
-    .about-hero__title { font-size: 1.4rem; }
-    .about-images__grid { grid-template-columns: 1fr; }
-    .about-values__grid,
-    .about-opgoals__grid,
-    .about-stats__grid { grid-template-columns: 1fr; }
-    .about-goals__grid { grid-template-columns: 1fr; }
-    .about-opgoals__card--center { grid-column: 1; }
-}
-
-/* ================================================
-   DARK MODE  (honour base.html dark: toggle)
-   ================================================ */
-.dark .about-intro,
-.dark .about-vm,
-.dark .about-goals,
-.dark .about-images {
-    background: #111827;
-    color: #e5e7eb;
-}
-.dark .about-values,
-.dark .about-opgoals {
-    background: #1f2937;
-    color: #e5e7eb;
-}
-.dark .about-intro__heading,
-.dark .about-values__heading,
-.dark .about-goals__heading,
-.dark .about-opgoals__heading,
-.dark .about-vm__title,
-.dark .about-values__label,
-.dark .about-opgoals__label,
-.dark .about-goals__text {
-    color: #f3f4f6;
-}
-.dark .about-intro__text,
-.dark .about-vm__desc,
-.dark .about-goals__text {
-    color: #9ca3af;
-}
-.dark .about-vm__card,
-.dark .about-values__card,
-.dark .about-goals__card,
-.dark .about-opgoals__card {
-    background: #374151;
-    box-shadow: 0 2px 12px rgba(0,0,0,.25);
 }
 
 /* ================================================
@@ -489,7 +537,6 @@
     margin: 0 auto;
 }
 
-/* single card — clickable <a> */
 .about-profile__card {
     display: flex;
     align-items: center;
@@ -510,7 +557,6 @@
     transform: translateY(-3px);
 }
 
-/* PDF icon circle */
 .about-profile__icon {
     flex-shrink: 0;
     width: 58px;
@@ -524,7 +570,7 @@
     background: #eef7fb;
 }
 .about-profile__card--en .about-profile__icon {
-    background: #eef5f0;           /* soft green tint for EN          */
+    background: #eef5f0;
 }
 .about-profile__card--ar .about-profile__icon svg {
     width: 26px; height: 26px;
@@ -532,10 +578,9 @@
 }
 .about-profile__card--en .about-profile__icon svg {
     width: 26px; height: 26px;
-    stroke: #4caf7a;              /* green accent for EN             */
+    stroke: #4caf7a;
 }
 
-/* text block */
 .about-profile__body {
     flex: 1;
     min-width: 0;
@@ -553,7 +598,6 @@
     margin: 0;
 }
 
-/* arrow icon — flipped for LTR english card */
 .about-profile__arrow {
     flex-shrink: 0;
     width: 22px;
@@ -574,29 +618,142 @@
     stroke: #3a9e68;
 }
 
-/* ── responsive ── */
-@media (max-width: 700px) {
-    .about-profile__grid { grid-template-columns: 1fr; }
+/* ================================================
+   RESPONSIVE - Tablet
+   ================================================ */
+@media (max-width: 900px) {
+    .about-hero { height: 380px; }
+    .about-vm__grid { grid-template-columns: 1fr; }
+    .about-values__grid,
+    .about-opgoals__grid,
+    .about-stats__grid { grid-template-columns: repeat(2, 1fr); }
+    .about-opgoals__card--center { grid-column: 1 / -1; }
+    
+    .about-strategic__table-header,
+    .about-strategic__row {
+        grid-template-columns: 60px 1fr;
+    }
+    
+    .about-strategic__col--desc,
+    .about-strategic__cell--desc {
+        display: none;
+    }
 }
 
-/* ── dark mode ── */
+/* ================================================
+   RESPONSIVE - Mobile
+   ================================================ */
+@media (max-width: 580px) {
+    .about-hero { height: 300px; }
+    .about-hero__title { font-size: 1.4rem; }
+    .about-images__grid { grid-template-columns: 1fr; }
+    .about-values__grid,
+    .about-opgoals__grid,
+    .about-stats__grid { grid-template-columns: 1fr; }
+    .about-goals__grid { grid-template-columns: 1fr; }
+    .about-opgoals__card--center { grid-column: 1; }
+    .about-profile__grid { grid-template-columns: 1fr; }
+    
+    .about-strategic__tabs {
+        flex-direction: column;
+    }
+    
+    .about-strategic__tab {
+        width: 100%;
+    }
+    
+    .about-strategic__table-header,
+    .about-strategic__row {
+        grid-template-columns: 50px 1fr;
+        gap: 1rem;
+        padding: 1.25rem 1rem;
+    }
+    
+    .about-strategic__table-header {
+        font-size: 0.95rem;
+    }
+    
+    .about-strategic__cell--goal {
+        font-size: 0.9rem;
+    }
+}
+
+/* ================================================
+   DARK MODE
+   ================================================ */
+.dark .about-intro,
+.dark .about-vm,
+.dark .about-goals,
+.dark .about-images,
+.dark .about-strategic {
+    background: #111827;
+    color: #e5e7eb;
+}
+.dark .about-values,
+.dark .about-opgoals,
 .dark .about-profile {
     background: #1f2937;
+    color: #e5e7eb;
 }
-.dark .about-profile__heading {
+.dark .about-intro__heading,
+.dark .about-values__heading,
+.dark .about-goals__heading,
+.dark .about-opgoals__heading,
+.dark .about-profile__heading,
+.dark .about-vm__title,
+.dark .about-values__label,
+.dark .about-opgoals__label,
+.dark .about-goals__text {
     color: #f3f4f6;
 }
-.dark .about-profile__card {
+.dark .about-intro__text,
+.dark .about-vm__desc,
+.dark .about-goals__text {
+    color: #9ca3af;
+}
+.dark .about-vm__card,
+.dark .about-values__card,
+.dark .about-goals__card,
+.dark .about-opgoals__card,
+.dark .about-profile__card,
+.dark .about-strategic__table {
     background: #374151;
     box-shadow: 0 2px 12px rgba(0,0,0,.25);
 }
-.dark .about-profile__card:hover {
-    border-color: var(--clr-primary);
-    box-shadow: 0 6px 24px rgba(91,168,200,.25);
+.dark .about-strategic__tab {
+    background: #374151;
+    color: #9ca3af;
+}
+.dark .about-strategic__tab:hover {
+    background: rgba(91, 168, 200, 0.15);
+    color: var(--clr-primary);
+}
+.dark .about-strategic__tab.active {
+    background: var(--clr-primary);
+    color: white;
+}
+.dark .about-strategic__table-body {
+    background: #374151;
+}
+.dark .about-strategic__row {
+    border-bottom-color: #4b5563;
+}
+.dark .about-strategic__row:hover {
+    background: #4b5563;
+}
+.dark .about-strategic__cell--goal {
+    color: #f3f4f6;
+}
+.dark .about-strategic__cell--desc {
+    color: #9ca3af;
 }
 .dark .about-profile__title {
     color: #f3f4f6;
 }
 .dark .about-profile__sub {
     color: #9ca3af;
+}
+.dark .about-profile__card:hover {
+    border-color: var(--clr-primary);
+    box-shadow: 0 6px 24px rgba(91,168,200,.25);
 }

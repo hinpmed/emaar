@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-pm-#b+w(4%_(+2xlay+o1=x4$)65ooht^3qi@c#leu#g8jeaef'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]  # لاحقًا تقدر تحط دومين Railway فقط
 

@@ -1,0 +1,131 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}أعضاء الجمعية العمومية - جمعية إعمار الخيرية{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/governance_sub.css' %}">
+<style>
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.member-card {
+    background: #fff;
+    border: 1.5px solid #eaeff4;
+    border-radius: 14px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: border-color .3s, box-shadow .3s, transform .3s;
+}
+
+.member-card:hover {
+    border-color: #06b6d4;
+    box-shadow: 0 6px 20px rgba(6, 182, 212, .15);
+    transform: translateY(-3px);
+}
+
+.member-card__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    background: #e0f2fe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-card__icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: #06b6d4;
+}
+
+.member-card__name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dark .member-card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+.dark .member-card:hover {
+    border-color: #06b6d4;
+}
+
+.dark .member-card__name {
+    color: #f3f4f6;
+}
+
+.dark .member-card__icon {
+    background: #1e3a3a;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="gsub-page">
+  <div class="container">
+
+    <!-- ── back link ── -->
+    <div class="gsub-back-row">
+      <a href="{% url 'website:governance' %}" class="gsub-back">
+        العودة للحوكمة
+        <svg class="gsub-back__arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+
+    <!-- ── hero ── -->
+    <div class="gsub-hero">
+      <div class="gsub-hero__icon" style="background:#06b6d4;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <h1 class="gsub-hero__title">أعضاء الجمعية العمومية</h1>
+      <p class="gsub-hero__sub">قائمة أعضاء الجمعية العمومية لجمعية إعمار</p>
+    </div>
+
+    <!-- ══════════ قائمة الأعضاء ══════════ -->
+    <div class="members-grid">
+      {% for member in members %}
+      <div class="member-card">
+        <div class="member-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <p class="member-card__name">{{ member }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+{% endblock %}
