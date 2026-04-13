@@ -27,6 +27,13 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["*"]  # لاحقًا تقدر تحط دومين Railway فقط
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://emaar.org.sa',
+    'https://www.emaar.org.sa',
+    'https://*.emaar.org.sa',
+    'https://*.up.railway.app',
+]
+
 
 # Application definition
 
