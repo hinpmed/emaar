@@ -18,6 +18,7 @@ app_name = 'website'
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('service/beneficiary-contact-request/', views.beneficiary_contact_request, name='beneficiary_contact_request'),
     path('service/<str:service_id>/', views.service_detail, name='service_detail'),
     path('campaigns/', views.campaigns, name='campaigns'),
     

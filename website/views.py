@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 
@@ -168,6 +170,13 @@ SERVICES = [
 
     # ── المستفيدين ──
     {
+        'id': 'beneficiary-contact-request',
+        'title': 'طلب تواصل لمستفيد',
+        'description': 'تقديم طلب تواصل مع الباحث الاجتماعي لمتابعة حالة المستفيد',
+        'icon': '📞',
+        'category': 'مستفيد',
+    },
+    {
         'id': 'register-beneficiary',
         'title': 'تسجيل مستفيد',
         'description': 'تسجيل مستفيد جديد في قاعدة بيانات الجمعية',
@@ -220,6 +229,31 @@ def service_detail(request, service_id):
     """Individual service detail page"""
     context = {'service_id': service_id}
     return render(request, 'website/service_detail.html', context)
+
+
+@require_http_methods(["GET", "POST"])
+def beneficiary_contact_request(request):
+    """Service form: طلب تواصل لمستفيد – sends details to soc.res@emaar.org.sa"""
+    if request.method == 'POST':
+        name = request.POST.get('name', '').strip()
+        mobile = request.POST.get('mobile', '').strip()
+        details = request.POST.get('details', '').strip()
+
+        try:
+            send_mail(
+                subject='طلب تواصل لمستفيد',
+                message=f'الاسم: {name}\nرقم الجوال: {mobile}\n\nالتفاصيل:\n{details}',
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=['soc.res@emaar.org.sa'],
+                fail_silently=False,
+            )
+        except Exception:
+            pass  # email failure should not block the user confirmation
+
+        return render(request, 'website/beneficiary_contact_request.html', {'success': True})
+
+    return render(request, 'website/beneficiary_contact_request.html', {'success': False})
+
 
 def campaigns(request):
     """Campaigns listing page"""
