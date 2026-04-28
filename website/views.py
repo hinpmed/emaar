@@ -244,7 +244,7 @@ def beneficiary_contact_request(request):
                 subject='طلب تواصل لمستفيد',
                 message=f'الاسم: {name}\nرقم الجوال: {mobile}\n\nالتفاصيل:\n{details}',
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=['soc.res@emaar.org.sa'],
+                recipient_list=['dm@emaar.org.sa'],
                 fail_silently=False,
             )
         except Exception:
