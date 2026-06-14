@@ -31,17 +31,50 @@
       <p  class="gsub-hero__sub">معلومات عن أملاك واستثمارات الجمعية</p>
     </div>
 
-    <!-- ── empty state ── -->
-    <div class="gsub-empty">
-      <div class="gsub-empty__icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="2rem">
-            <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8"  x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
+    <!-- ── investments grid ── -->
+    <div class="gsub-group-head">
+      <span class="gsub-group-head__label">الذراع الاستثماري</span>
+      <span class="gsub-group-head__badge" style="background:#ecfdf5; color:#10b981;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+          <polyline points="17 6 23 6 23 12"/>
         </svg>
+      </span>
+    </div>
+
+    <div class="gsub-docs-grid" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
+
+      <!-- شركة مشربية -->
+      <div class="gsub-doc-card" style="cursor:default;">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">شركة مشربية</p>
+          <p class="gsub-doc-card__desc">الذراع الاستثماري لجمعية إعمار</p>
+          <p class="gsub-doc-card__meta">ذراع استثماري</p>
+        </div>
+        <span class="gsub-doc-card__icon" style="background:#ecfdf5;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+            <line x1="12" y1="12" x2="12" y2="16"/>
+            <line x1="10" y1="14" x2="14" y2="14"/>
+          </svg>
+        </span>
       </div>
-      <h2 class="gsub-empty__title">لا توجد أملاك واستثمارات حالياً</h2>
-      <p  class="gsub-empty__desc">لا يوجد أملاك واستثمارات لدى جمعية إعمار في الوقت الحالي</p>
+
+      <!-- صندوق احسان الوقفي -->
+      <div class="gsub-doc-card" style="cursor:default;">
+        <div class="gsub-doc-card__text">
+          <p class="gsub-doc-card__name">صندوق إحسان الوقفي</p>
+          <p class="gsub-doc-card__desc">وقف جمعية إعمار في صندوق إحسان الوقفي</p>
+          <p class="gsub-doc-card__meta">وقف</p>
+        </div>
+        <span class="gsub-doc-card__icon" style="background:#fef3c7;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </span>
+      </div>
+
     </div>
 
   </div>

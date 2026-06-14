@@ -760,17 +760,17 @@ def governance_general_members(request):
 def governance_board_members(request):
     """أعضاء مجلس الإدارة"""
     board_members = [
-        {'name': 'د. كمال محمد عثمان', 'position': 'رئيس مجلس الإدارة'},
-        {'name': 'م. عبدالله فهد الردادي', 'position': 'نائب رئيس مجلس الإدارة'},
-        {'name': 'أ. عمر هاشم برزنجي', 'position': 'عضو مجلس الإدارة'},
-        {'name': 'أ. يوسف أيمن عبدالغني', 'position': 'عضو مجلس الإدارة'},
-        {'name': 'أ. أحمد بكر زيدان', 'position': 'عضو مجلس الإدارة'},
+        {'name': 'كمال محمد حسين عثمان', 'position': 'رئيس مجلس الإدارة'},
+        {'name': 'عبداللّٰه بن فهد بن سالم الردادي', 'position': 'نائب رئيس مجلس الإدارة'},
+        {'name': 'عمر هاشم بن محمد برزنجي', 'position': 'عضو مجلس الإدارة'},
+        {'name': 'يوسف ايمن عبدالغني احمد', 'position': 'عضو مجلس الإدارة'},
+        {'name': 'احمد بكر احمد زيدان', 'position': 'عضو مجلس الإدارة'},
     ]
-    
+
     context = {
         'board_members': board_members,
-        'term_number': 2,
-        'remaining_years': 'سنتين',
+        'term_number': 3,
+        'remaining_years': 'حتى 09-12-2025',
     }
     return render(request, 'website/governance_board_members.html', context)
 
