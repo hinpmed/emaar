@@ -769,8 +769,8 @@ def governance_board_members(request):
 
     context = {
         'board_members': board_members,
-        'term_number': 3,
-        'remaining_years': 'حتى 09-12-2025',
+        'term_number': 2,
+        'remaining_years': 'حتى 25-12-2029',
     }
     return render(request, 'website/governance_board_members.html', context)
 
